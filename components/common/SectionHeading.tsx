@@ -32,12 +32,12 @@ export function SectionHeading({
         </p>
       ) : null}
 
-      <TitleTag className="font-serif text-4xl font-semibold leading-tight tracking-[-0.025em] text-charcoal sm:text-5xl lg:text-6xl">
+      <TitleTag className="break-keep font-serif text-4xl font-semibold leading-tight tracking-[-0.025em] text-charcoal sm:text-5xl lg:text-6xl">
         {title}
       </TitleTag>
 
       {description ? (
-        <p className="mt-6 max-w-2xl text-base leading-8 text-muted sm:text-lg">
+        <p className="mt-6 max-w-2xl break-keep text-base leading-8 text-muted sm:text-lg">
           {description}
         </p>
       ) : null}
