@@ -74,7 +74,7 @@ export function LocationCTA() {
                     HOURS
                   </dt>
                   <dd className="font-sans text-base leading-8 text-charcoal">
-                    <ul className="grid gap-1">
+                    <ul className="grid list-none gap-1">
                       {site.hours.map((hour) => (
                         <li key={hour.label}>
                           {hour.label} {hour.value}

@@ -61,7 +61,7 @@ export function Header() {
 
   return (
     <header
-      className={`sticky top-0 z-50 border-b border-line bg-ivory/95 backdrop-blur transition-shadow duration-300 ease-calm ${
+      className={`sticky top-0 z-[100] border-b border-line bg-ivory/95 backdrop-blur transition-shadow duration-300 ease-calm ${
         hasScrolled ? "shadow-soft" : "shadow-none"
       }`}
     >

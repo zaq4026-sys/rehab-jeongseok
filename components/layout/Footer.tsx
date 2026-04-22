@@ -84,7 +84,7 @@ export function Footer() {
                   Hours
                 </dt>
                 <dd className="text-charcoal">
-                  <ul className="grid gap-1">
+                  <ul className="grid list-none gap-1">
                     {site.hours.map((hour) => (
                       <li key={hour.label}>
                         {hour.label} {hour.value}
