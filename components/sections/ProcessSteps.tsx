@@ -56,7 +56,7 @@ export function ProcessSteps() {
         <SectionHeading
           id="process-heading"
           kicker="3-STAGE MODEL"
-          title="평가 → 회복 → 복귀. 순서를 지킵니다."
+          title="평가 → 회복 → 복귀."
           description="통증 완화만 목표로 삼지 않습니다. 평가로 원인을 찾고, 회복으로 토대를 다지고, 복귀로 일상·운동·업무에서 재발 없이 유지되는 수준까지 이끕니다."
           align="left"
         />
