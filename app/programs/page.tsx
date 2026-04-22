@@ -67,7 +67,7 @@ export default function ProgramsPage() {
                 >
                   <article className="flex h-full flex-col border border-line bg-ivory p-8 transition-colors duration-500 ease-calm group-hover:border-brand lg:p-10">
                     <p className="mb-5 font-en text-[10px] font-semibold uppercase tracking-[0.18em] text-brand">
-                      {program.slug.replaceAll("-", " ")}
+                      {program.cardLabel}
                     </p>
                     <h2 className="break-keep font-serif text-3xl font-semibold leading-tight tracking-[-0.025em] text-charcoal">
                       {program.title}

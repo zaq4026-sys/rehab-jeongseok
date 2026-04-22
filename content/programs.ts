@@ -8,6 +8,7 @@ export type ProgramSlug =
 
 export type Program = {
   slug: ProgramSlug;
+  cardLabel: string;
   title: string;
   cardOneLiner: string;
   heroHeadline: string;
@@ -34,6 +35,7 @@ export type Program = {
 export const PROGRAMS: Program[] = [
   {
     slug: "lower-back",
+    cardLabel: "LOWER BACK",
     title: "허리 통증",
     cardOneLiner: "허리가 대신 감당하던 부하를 걷어냅니다.",
     heroHeadline: "허리는 버텨서 낫는 곳이 아닙니다",
@@ -83,6 +85,7 @@ export const PROGRAMS: Program[] = [
   },
   {
     slug: "neck-shoulder",
+    cardLabel: "NECK & SHOULDER",
     title: "목·어깨 통증",
     cardOneLiner: "목·어깨가 따로가 아닌, 같은 원인에서 풀립니다.",
     heroHeadline: "목과 어깨는 따로 아픈 곳이 아닙니다",
@@ -131,6 +134,7 @@ export const PROGRAMS: Program[] = [
   },
   {
     slug: "knee",
+    cardLabel: "KNEE",
     title: "무릎 통증",
     cardOneLiner: "무릎이 아닌, 엉덩이와 발목에서 시작합니다.",
     heroHeadline: "무릎은 엉덩이와 발목 사이에서 눌립니다",
@@ -178,6 +182,7 @@ export const PROGRAMS: Program[] = [
   },
   {
     slug: "post-surgery",
+    cardLabel: "POST-SURGERY",
     title: "수술 후 재활",
     cardOneLiner: "수술이 복원한 구조에, 기능을 되돌립니다.",
     heroHeadline: "수술은 끝이 아니라 재활의 시작입니다",
@@ -225,6 +230,7 @@ export const PROGRAMS: Program[] = [
   },
   {
     slug: "parkinsons",
+    cardLabel: "PARKINSON'S",
     title: "파킨슨 재활",
     cardOneLiner: "움직임의 크기와 속도를 다시 가르칩니다.",
     heroHeadline: "움직임의 속도와 크기를 다시 가르칩니다",
@@ -273,6 +279,7 @@ export const PROGRAMS: Program[] = [
   },
   {
     slug: "athlete",
+    cardLabel: "ATHLETE",
     title: "선수 재활",
     cardOneLiner: "'안 아프다'가 아닌, '다시 뛸 수 있다'까지.",
     heroHeadline: "복귀는 통증이 사라진 순간이 아닙니다",

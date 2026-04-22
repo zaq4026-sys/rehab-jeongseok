@@ -17,7 +17,7 @@ export function ProgramHero({ program }: ProgramHeroProps) {
       <div className="mx-auto max-w-6xl px-6">
         <FadeUp delayMs={0}>
           <p className="mb-6 font-en text-xs font-semibold uppercase tracking-[0.18em] text-brand">
-            PROGRAM · {program.slug.replaceAll("-", " ")}
+            PROGRAM · {program.cardLabel}
           </p>
           <h1 className="max-w-4xl break-keep font-serif text-5xl font-semibold leading-[1.08] tracking-[-0.03em] text-charcoal md:text-6xl lg:text-7xl">
             {program.heroHeadline}

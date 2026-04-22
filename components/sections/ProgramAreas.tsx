@@ -22,7 +22,7 @@ function ProgramCardLink({ program }: { program: Program }) {
     >
       <article className="h-full border border-line bg-white p-8 transition-all duration-500 ease-calm group-hover:border-brand group-hover:bg-ivory lg:p-10">
         <p className="mb-5 font-en text-[10px] font-semibold uppercase tracking-[0.18em] text-brand lg:mb-6">
-          {program.slug.replaceAll("-", " ")}
+          {program.cardLabel}
         </p>
 
         <h4 className="font-serif text-2xl font-semibold leading-[1.25] tracking-[-0.02em] text-charcoal lg:text-3xl">
