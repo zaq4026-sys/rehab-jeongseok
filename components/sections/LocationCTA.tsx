@@ -11,6 +11,7 @@ const phoneHref = `tel:${site.phone.replaceAll("-", "")}`;
 export function LocationCTA() {
   return (
     <section
+      id="location"
       aria-labelledby="location-heading"
       className="bg-ivory py-32 lg:py-40"
     >
