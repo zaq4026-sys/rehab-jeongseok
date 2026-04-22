@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import type { ReactNode } from "react";
+import { Fragment, type ReactNode } from "react";
 import { CTAButton } from "@/components/common/CTAButton";
 import { FadeUp } from "@/components/common/FadeUp";
 import { LocationCTA } from "@/components/sections/LocationCTA";
@@ -39,7 +39,7 @@ const principles = [
 ];
 
 const firstSession = [
-  { label: "소요 시간", value: "30~60분" },
+  { label: "소요 시간", value: "30–60분" },
   {
     label: "구성",
     value: "상담 → 움직임 평가 → 시범 세션 → Before/After 비교",
@@ -153,19 +153,16 @@ export default function ApproachPage() {
 
         <FadeUp delayMs={120}>
           <div className="mt-12 border border-line bg-white p-8 lg:p-10">
-            <dl className="grid gap-6">
+            <dl className="grid grid-cols-1 gap-x-8 gap-y-3 text-base md:grid-cols-[7rem_1fr] md:gap-y-5 md:text-lg">
               {firstSession.map((item) => (
-                <div
-                  key={item.label}
-                  className="grid gap-2 border-b border-line pb-6 last:border-b-0 last:pb-0 md:grid-cols-[9rem_1fr] md:gap-8"
-                >
-                  <dt className="font-en text-[10px] font-semibold uppercase tracking-[0.18em] text-muted">
+                <Fragment key={item.label}>
+                  <dt className="font-sans text-sm font-semibold text-muted md:leading-8">
                     {item.label}
                   </dt>
-                  <dd className="break-keep font-sans text-base leading-8 text-charcoal">
+                  <dd className="break-keep pb-5 font-sans leading-8 text-charcoal md:pb-0">
                     {item.value}
                   </dd>
-                </div>
+                </Fragment>
               ))}
             </dl>
 

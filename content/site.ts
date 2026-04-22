@@ -33,6 +33,11 @@ type SiteConfig = {
   };
 };
 
+export const NAVER_BOOKING_URL =
+  "https://map.naver.com/p/entry/place/2049088805/ticket";
+
+export const NAVER_PLACE_URL = "https://map.naver.com/p/entry/place/2049088805";
+
 export const site: SiteConfig = {
   name: "재활의정석 전문운동센터",
   url: "https://rehab-jeongseok.vercel.app",
@@ -72,11 +77,9 @@ export const site: SiteConfig = {
   parking: "건물 앞 한샘 주차장 2시간 무료",
   kakaoChannelUrl: null,
   links: {
-    naverBooking:
-      "https://map.naver.com/p/entry/place/2049088805?placePath=/ticket?entry=plt&from=map&fromPanelNum=1&additionalHeight=76&timestamp=202604220234&locale=ko&svcName=map_pcv5&from=map&fromPanelNum=1&additionalHeight=76&timestamp=202604220234&locale=ko&svcName=map_pcv5&searchType=place&lng=126.8698829&lat=35.1713434&c=15.00,0,0,0,dh",
-    naverPlace:
-      "https://map.naver.com/p/entry/place/2049088805?placePath=/home?entry=plt&from=map&fromPanelNum=1&additionalHeight=76&timestamp=202604220234&locale=ko&svcName=map_pcv5&searchType=place&lng=126.8698829&lat=35.1713434&c=15.00,0,0,0,dh",
-    naverMap: "https://map.naver.com/p/entry/place/2049088805",
+    naverBooking: NAVER_BOOKING_URL,
+    naverPlace: NAVER_PLACE_URL,
+    naverMap: NAVER_PLACE_URL,
     daangn: "https://www.daangn.com/kr/local-profile/pbht2g5gtkc7/",
   },
 };

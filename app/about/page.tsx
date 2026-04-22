@@ -133,8 +133,8 @@ export default function AboutPage() {
             <SectionTitle>황제원 대표</SectionTitle>
             <div className="mt-10 space-y-7 break-keep font-serif text-xl leading-9 tracking-[-0.01em] text-charcoal/80">
               <p>
-                고려대학교 의과대학원에서 스포츠의학 석사를 수료하고,
-                물리치료사 면허를 기반으로 재활 현장에 서왔습니다.
+                고려대학교 의과대학원에서 스포츠의학 석사 과정을 밟고
+                있으며, 물리치료사 면허를 기반으로 재활 현장에 서왔습니다.
               </p>
               <p>
                 병원 재활실에서 수술 직후의 환자들을, 피트니스 현장에서 운동
@@ -177,8 +177,8 @@ export default function AboutPage() {
           <div className="max-w-3xl">
             <SectionTitle>이력</SectionTitle>
             <p className="mt-10 break-keep font-serif text-xl leading-9 tracking-[-0.01em] text-charcoal/80">
-              고려대학교 의과대학원 스포츠의학 석사 · 물리치료사 면허 · 병원
-              재활실 및 스포츠 현장 실무
+              고려대학교 의과대학원 스포츠의학 석사 재학 · 물리치료사 면허 ·
+              병원 재활실 및 스포츠 현장 실무
             </p>
           </div>
         </FadeUp>
