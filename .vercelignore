@@ -1,0 +1,18 @@
+node_modules
+.next
+.local-node
+node-v*-win-x64.zip
+.env
+.env.local
+.env.*.local
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+public-tunnel.log
+public-tunnel.err.log
+dev-server.out.log
+dev-server.err.log
+screenshots
+재활의정석 (1)
+public/images/brand/source-logo.ai

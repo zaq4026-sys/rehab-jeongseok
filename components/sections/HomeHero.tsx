@@ -1,0 +1,81 @@
+import { CTAButton } from "@/components/common/CTAButton";
+import { FadeUp } from "@/components/common/FadeUp";
+import { PlaceholderImage } from "@/components/common/PlaceholderImage";
+import { site } from "@/content/site";
+
+/**
+ * Main landing hero for the center positioning.
+ * Introduces the specialist credential, core promise, and primary booking path.
+ */
+export function HomeHero() {
+  return (
+    <section
+      aria-labelledby="hero-heading"
+      className="relative min-h-[calc(100dvh-5rem)] bg-ivory"
+    >
+      <div className="mx-auto grid min-h-[calc(100dvh-5rem)] w-full max-w-7xl grid-cols-1 items-center gap-12 px-5 py-section sm:px-8 lg:grid-cols-[1.3fr_1fr] lg:gap-20 lg:px-10 lg:py-section-lg">
+        <div>
+          <FadeUp delayMs={0}>
+            <p className="mb-8 font-en text-xs font-semibold uppercase tracking-[0.18em] text-brand sm:mb-10">
+              KOREA UNIVERSITY SPORTS MEDICINE · BOARD-CERTIFIED PHYSICAL
+              THERAPIST
+            </p>
+          </FadeUp>
+
+          <FadeUp delayMs={120}>
+            <h1
+              id="hero-heading"
+              className="font-serif text-5xl font-semibold leading-[1.1] tracking-[-0.025em] text-charcoal sm:text-6xl lg:text-7xl xl:text-[5.5rem]"
+            >
+              통증이 반복되는 이유부터
+              <br />
+              다시 봅니다.
+            </h1>
+          </FadeUp>
+
+          <FadeUp delayMs={240}>
+            <p className="mt-8 max-w-xl font-sans text-base leading-8 text-muted sm:text-lg sm:leading-9 lg:mt-10">
+              재활전문 물리치료사가 직접 평가하고, 직접 설계합니다.
+              <br />
+              허리·어깨·팔꿈치·발목의 만성 통증, 그리고 파킨슨·뇌졸중
+              재활까지.
+              <br />
+              광주 재활의정석 전문운동센터.
+            </p>
+          </FadeUp>
+
+          <FadeUp delayMs={360}>
+            <div className="mt-12 flex flex-col gap-4 sm:flex-row sm:gap-5">
+              <CTAButton
+                href={site.links.naverBooking}
+                external
+                ariaLabel="네이버 예약 페이지에서 1:1 상담 예약하기"
+              >
+                1:1 상담 예약
+              </CTAButton>
+
+              <CTAButton href="/about" variant="secondary">
+                대표 프로필 보기
+              </CTAButton>
+            </div>
+          </FadeUp>
+        </div>
+
+        <FadeUp delayMs={200}>
+          <PlaceholderImage
+            aspect="3:4"
+            label="대표 프로필 사진 자리 · 추후 교체"
+            className="mx-auto w-full max-w-[28rem] lg:max-w-none"
+          />
+        </FadeUp>
+      </div>
+
+      <div className="pointer-events-none absolute bottom-8 left-1/2 hidden -translate-x-1/2 text-center sm:block">
+        <p className="font-en text-[10px] font-semibold tracking-[0.18em] text-muted">
+          SCROLL
+        </p>
+        <span className="mx-auto mt-3 block h-8 w-px bg-line" />
+      </div>
+    </section>
+  );
+}

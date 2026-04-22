@@ -1,0 +1,21 @@
+node_modules
+.next
+.vercel
+.local-node
+node-v*-win-x64.zip
+out
+dist
+.env
+.env.local
+.env.*.local
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.DS_Store
+public-tunnel.log
+public-tunnel.err.log
+dev-server.out.log
+dev-server.err.log
+screenshots
+재활의정석 (1)

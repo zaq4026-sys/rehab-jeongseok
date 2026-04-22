@@ -1,0 +1,179 @@
+"use client";
+
+import Image from "next/image";
+import Link from "next/link";
+import { useEffect, useState } from "react";
+import { CTAButton } from "@/components/common/CTAButton";
+import { mainNavigation } from "@/content/navigation";
+import { site } from "@/content/site";
+
+/**
+ * Sticky site header with desktop navigation and an accessible mobile overlay menu.
+ * Uses the horizontal light logo on the ivory background and routes booking externally.
+ */
+export function Header() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [hasScrolled, setHasScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setHasScrolled(window.scrollY > 8);
+    };
+
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (!isMenuOpen) return;
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setIsMenuOpen(false);
+      }
+    };
+
+    const scrollY = window.scrollY;
+    document.body.style.position = "fixed";
+    document.body.style.top = `-${scrollY}px`;
+    document.body.style.left = "0";
+    document.body.style.right = "0";
+
+    window.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      document.body.style.position = "";
+      document.body.style.top = "";
+      document.body.style.left = "";
+      document.body.style.right = "";
+      window.scrollTo(0, scrollY);
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [isMenuOpen]);
+
+  const closeMenu = () => {
+    setIsMenuOpen(false);
+  };
+
+  return (
+    <header
+      className={`sticky top-0 z-50 border-b border-line bg-ivory/95 backdrop-blur transition-shadow duration-300 ease-calm ${
+        hasScrolled ? "shadow-soft" : "shadow-none"
+      }`}
+    >
+      <div className="mx-auto flex h-20 w-full max-w-7xl items-center justify-between px-5 sm:px-8 lg:px-10">
+        <Link
+          href="/"
+          aria-label={`${site.name} 홈`}
+          className="inline-flex items-center focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand"
+          onClick={closeMenu}
+        >
+          <Image
+            src="/images/brand/logo-horizontal-light.png"
+            alt="재활의정석 전문운동센터"
+            width={2105}
+            height={690}
+            priority
+            sizes="(max-width: 1024px) 36px, 44px"
+            className="h-11 w-auto sm:h-12 lg:h-14"
+          />
+        </Link>
+
+        <nav aria-label="주요 메뉴" className="hidden items-center gap-8 lg:flex">
+          {mainNavigation.map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              className="text-sm font-medium text-charcoal transition-colors duration-300 ease-calm hover:text-brand focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand"
+            >
+              {item.label}
+            </Link>
+          ))}
+        </nav>
+
+        <div className="hidden items-center gap-4 lg:flex">
+          <a
+            href={`tel:${site.phone.replaceAll("-", "")}`}
+            className="font-en text-xs font-semibold tracking-[0.14em] text-muted transition-colors duration-300 ease-calm hover:text-brand"
+          >
+            {site.phone}
+          </a>
+          <CTAButton
+            href={site.links.naverBooking}
+            external
+            ariaLabel="네이버 예약 페이지 열기"
+          >
+            1:1 상담 예약
+          </CTAButton>
+        </div>
+
+        <CTAButton
+          variant="text"
+          ariaLabel={isMenuOpen ? "모바일 메뉴 닫기" : "모바일 메뉴 열기"}
+          aria-expanded={isMenuOpen}
+          aria-controls="mobile-navigation"
+          onClick={() => setIsMenuOpen((current) => !current)}
+          className="lg:hidden"
+        >
+          <span className="font-en text-xs font-semibold tracking-[0.18em]">
+            {isMenuOpen ? "CLOSE" : "MENU"}
+          </span>
+        </CTAButton>
+      </div>
+
+      <div
+        id="mobile-navigation"
+        className={`fixed inset-x-0 top-20 z-40 h-[calc(100dvh-5rem)] bg-ivory transition-all duration-500 ease-calm lg:hidden ${
+          isMenuOpen
+            ? "pointer-events-auto translate-y-0 opacity-100"
+            : "pointer-events-none -translate-y-4 opacity-0"
+        }`}
+        aria-hidden={!isMenuOpen}
+      >
+        <nav
+          aria-label="모바일 주요 메뉴"
+          className="flex h-full flex-col justify-between px-5 pb-8 pt-10 sm:px-8"
+        >
+          <div className="grid gap-2">
+            {mainNavigation.map((item, index) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                onClick={closeMenu}
+                className="group border-b border-line py-5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand"
+              >
+                <span className="mb-2 block font-en text-[11px] font-semibold tracking-[0.18em] text-brand">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+                <span className="font-serif text-3xl font-semibold text-charcoal transition-colors duration-300 ease-calm group-hover:text-brand">
+                  {item.label}
+                </span>
+              </Link>
+            ))}
+          </div>
+
+          <div className="grid gap-4">
+            <CTAButton
+              href={site.links.naverBooking}
+              external
+              ariaLabel="네이버 예약 페이지 열기"
+              className="w-full"
+            >
+              1:1 상담 예약
+            </CTAButton>
+            <a
+              href={`tel:${site.phone.replaceAll("-", "")}`}
+              className="text-center font-en text-xs font-semibold tracking-[0.14em] text-muted"
+            >
+              TEL {site.phone}
+            </a>
+          </div>
+        </nav>
+      </div>
+    </header>
+  );
+}

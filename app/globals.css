@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+  Brand / Typography Rules
+
+  Colors:
+  - brand.DEFAULT (#1C9A99)는 로고, 1차 CTA, 인라인 링크, STEP 넘버,
+    영문 킥커, 핵심 자격 카드 하이라이트에만 사용한다.
+  - brand.DEFAULT를 섹션 전체 배경으로 깔지 않는다.
+  - brand.light (#E8F4F4)는 인용구, 통계 카드, hover 배경에만 제한적으로 사용한다.
+  - 포인트 컬러 사용 비율은 전체 화면의 5% 미만을 목표로 한다.
+
+  Fonts:
+  - 기본 상속 폰트는 Pretendard: font-sans.
+  - h1~h3이라고 해서 자동으로 세리프를 강제하지 않는다.
+  - 헤드라인, 대형 카드 키워드, 철학 문장에만 JSX에서 font-serif를 명시한다.
+  - 영문 킥커, STEP 01 같은 넘버링/라벨에만 font-en을 명시한다.
+  - font-serif로 한글 본문 장문을 조판하지 않는다.
+
+  TODO:
+  - 프로덕션 전 PretendardVariable.woff2를 public/fonts/에 배치하고,
+    @fontsource/pretendard 대신 next/font/local로 전환한다.
+*/
+
+:root {
+  /*
+   * TEMPORARY: @fontsource/pretendard 사용 중이라
+   * CSS 변수를 수동으로 등록.
+   * next/font/local 로 전환 시 이 변수 선언 제거 필수
+   * (next/font 가 자동 주입함).
+   * 관련 TODO: public/fonts/PretendardVariable.woff2 배치.
+   */
+  --font-pretendard: "Pretendard Variable";
+
+  color: #1a1a1a;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  color: #1a1a1a;
+  /* background 는 layout.tsx 의 bg-ivory 클래스로 처리 */
+}
+
+::selection {
+  background: #e8f4f4;
+  color: #1a1a1a;
+}
+
+a {
+  text-underline-offset: 0.18em;
+}
