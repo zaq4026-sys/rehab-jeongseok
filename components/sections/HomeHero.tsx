@@ -34,7 +34,7 @@ export function HomeHero() {
 
           <FadeUp delayMs={240}>
             <p className="mt-8 max-w-xl font-sans text-base leading-8 text-muted sm:text-lg sm:leading-9 lg:mt-10">
-              재활전문 물리치료사가 직접 평가하고, 직접 설계합니다.
+              운동전문 물리치료사가 직접 평가하고, 직접 설계합니다.
               <br />
               허리·어깨·팔꿈치·발목의 만성 통증, 그리고 파킨슨·뇌졸중
               재활까지.

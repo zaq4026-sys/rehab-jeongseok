@@ -29,7 +29,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: "재활의정석 전문운동센터",
   description:
-    "광주 만성 근골격계 통증 재활과 뇌질환 재활을 다루는 재활전문 물리치료사의 전문운동센터",
+    "광주 만성 근골격계 통증 재활과 뇌질환 재활을 다루는 운동전문 물리치료사의 전문운동센터",
 };
 
 export default function RootLayout({

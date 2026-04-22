@@ -86,7 +86,7 @@ export function Footer() {
                 <dd className="text-charcoal">
                   <div className="grid gap-1">
                     {site.hours.map((hour) => (
-                      <span key={hour.label}>
+                      <span key={hour.label} className="block">
                         {hour.label} {hour.value}
                       </span>
                     ))}

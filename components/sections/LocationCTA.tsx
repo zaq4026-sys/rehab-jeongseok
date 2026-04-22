@@ -76,7 +76,7 @@ export function LocationCTA() {
                   <dd className="font-sans text-base leading-8 text-charcoal">
                     <div className="grid gap-1">
                       {site.hours.map((hour) => (
-                        <span key={hour.label}>
+                        <span key={hour.label} className="block">
                           {hour.label} {hour.value}
                         </span>
                       ))}

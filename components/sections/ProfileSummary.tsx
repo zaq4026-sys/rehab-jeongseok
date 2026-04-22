@@ -43,7 +43,7 @@ export function ProfileSummary() {
           <FadeUp delayMs={360}>
             <ul className="mt-8 grid gap-2 lg:mt-10 lg:gap-3">
               <li className="font-sans text-base leading-relaxed text-charcoal lg:text-lg">
-                재활전문 물리치료사
+                운동전문 물리치료사
               </li>
               <li className="font-sans text-base leading-relaxed text-charcoal lg:text-lg">
                 고려대학교 융합과학대학원 스포츠의학과 석사과정
