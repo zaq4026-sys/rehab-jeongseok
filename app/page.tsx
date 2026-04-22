@@ -2,6 +2,7 @@ import { BeforeAfterComparison } from "@/components/sections/BeforeAfterComparis
 import { CredentialCards } from "@/components/sections/CredentialCards";
 import { CustomerReviews } from "@/components/sections/CustomerReviews";
 import { HomeHero } from "@/components/sections/HomeHero";
+import { LocationCTA } from "@/components/sections/LocationCTA";
 import { ProfileSummary } from "@/components/sections/ProfileSummary";
 import { ProgramAreas } from "@/components/sections/ProgramAreas";
 import { ProcessSteps } from "@/components/sections/ProcessSteps";
@@ -16,6 +17,7 @@ export default function Page() {
       <ProgramAreas />
       <ProfileSummary />
       <CustomerReviews />
+      <LocationCTA />
     </main>
   );
 }

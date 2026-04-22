@@ -11,9 +11,11 @@ export function Footer() {
   const externalLinks = [
     { label: "네이버 예약", href: site.links.naverBooking },
     { label: "네이버 플레이스", href: site.links.naverPlace },
-    { label: "카카오톡", href: site.links.kakao },
+    { label: "카카오톡", href: site.kakaoChannelUrl },
     { label: "당근", href: site.links.daangn },
-  ].filter((item) => Boolean(item.href));
+  ].filter(
+    (item): item is { label: string; href: string } => Boolean(item.href),
+  );
 
   return (
     <footer role="contentinfo" className="border-t border-line bg-ivory">
@@ -56,8 +58,9 @@ export function Footer() {
                   Address
                 </dt>
                 <dd className="text-charcoal">
-                  {site.address.text}
-                  {/* TODO: 네이버 플레이스 또는 당근 프로필 기준으로 정확한 주소 확인 */}
+                  {site.address.road}
+                  <br />
+                  {site.address.detail}
                 </dd>
               </div>
 
@@ -81,9 +84,11 @@ export function Footer() {
                   Hours
                 </dt>
                 <dd className="text-charcoal">
-                  평일 {site.hours.weekday}
-                  <br />
-                  토요일 {site.hours.saturday}
+                  {site.hours.map((hour) => (
+                    <span key={hour.label} className="block">
+                      {hour.label} {hour.value}
+                    </span>
+                  ))}
                 </dd>
               </div>
             </dl>
