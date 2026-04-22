@@ -1,6 +1,7 @@
 import { BeforeAfterComparison } from "@/components/sections/BeforeAfterComparison";
 import { CredentialCards } from "@/components/sections/CredentialCards";
 import { HomeHero } from "@/components/sections/HomeHero";
+import { ProfileSummary } from "@/components/sections/ProfileSummary";
 import { ProgramAreas } from "@/components/sections/ProgramAreas";
 import { ProcessSteps } from "@/components/sections/ProcessSteps";
 
@@ -12,6 +13,7 @@ export default function Page() {
       <BeforeAfterComparison />
       <ProcessSteps />
       <ProgramAreas />
+      <ProfileSummary />
     </main>
   );
 }
