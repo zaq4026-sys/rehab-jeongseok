@@ -74,13 +74,13 @@ export function LocationCTA() {
                     HOURS
                   </dt>
                   <dd className="font-sans text-base leading-8 text-charcoal">
-                    <ul className="grid list-none gap-1">
+                    <div className="grid gap-1">
                       {site.hours.map((hour) => (
-                        <li key={hour.label}>
+                        <span key={hour.label}>
                           {hour.label} {hour.value}
-                        </li>
+                        </span>
                       ))}
-                    </ul>
+                    </div>
                   </dd>
                 </div>
 
@@ -198,9 +198,7 @@ export function LocationCTA() {
         <FadeUp delayMs={300}>
           <div className="mt-24 text-center lg:mt-32">
             <p className="break-keep font-serif text-2xl font-semibold leading-[1.35] tracking-[-0.02em] text-charcoal lg:text-3xl">
-              평가 없이 시작하는 운동은
-              <br />
-              재활이 아닙니다.
+              아프지 않은 내일을 돌려드리는 게 저희의 일입니다.
             </p>
             <p className="mt-6 font-en text-[11px] font-semibold uppercase tracking-[0.18em] text-muted">
               — 재활의정석 전문운동센터

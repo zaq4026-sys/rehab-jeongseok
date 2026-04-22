@@ -19,7 +19,7 @@ export function ProfileSummary() {
               alt="재활의정석 대표 황제원 물리치료사"
               fill
               sizes="(min-width: 1024px) 40vw, 100vw"
-              className="object-cover"
+              className="object-cover object-top"
             />
           </div>
         </FadeUp>
@@ -46,7 +46,7 @@ export function ProfileSummary() {
                 재활전문 물리치료사
               </li>
               <li className="font-sans text-base leading-relaxed text-charcoal lg:text-lg">
-                고려대학교 스포츠의학 석사과정
+                고려대학교 융합과학대학원 스포츠의학과 석사과정
               </li>
               <li className="font-sans text-base leading-relaxed text-charcoal lg:text-lg">
                 재활의정석 전문운동센터 대표
@@ -62,7 +62,9 @@ export function ProfileSummary() {
             <p className="break-keep font-serif text-2xl font-semibold leading-[1.35] tracking-[-0.02em] text-charcoal lg:text-3xl xl:text-4xl">
               재활센터는 많습니다.
               <br />
-              하지만 직접 평가하고 직접 설계하는 곳은 드뭅니다.
+              하지만 직접 평가하고
+              <br />
+              직접 설계하는 곳은 드뭅니다.
             </p>
           </FadeUp>
 

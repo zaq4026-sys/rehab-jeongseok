@@ -43,10 +43,10 @@ const contactCards: ContactCard[] = [
   },
   {
     kicker: "CALL DIRECTLY",
-    title: site.phoneDisplay,
+    title: "전화 상담",
     description:
-      "증상을 바로 설명하고 싶거나, 빠르게 연락이 필요한 분. 평일 07:00 – 23:00.",
-    ctaLabel: "지금 전화 걸기",
+      "062-447-7377 — 증상을 바로 설명하고 싶거나, 빠르게 연락이 필요한 분. 평일 07:00 – 23:00.",
+    ctaLabel: "062-447-7377로 전화 걸기",
     href: `tel:${site.phone.replaceAll("-", "")}`,
     ariaLabel: `전화로 상담 문의: ${site.phoneDisplay}`,
   },
@@ -65,7 +65,7 @@ const contactCards: ContactCard[] = [
     title: "후기 먼저 보기",
     description:
       "결정 전에 실제 방문하신 분들의 후기를 더 읽어보고 싶은 분.",
-    ctaLabel: "후기 30+ 보러 가기",
+    ctaLabel: "후기 100+ 보러 가기",
     href: site.links.naverPlace,
     external: true,
     ariaLabel: "네이버 플레이스 후기 보기 (새 창)",

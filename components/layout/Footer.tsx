@@ -33,7 +33,7 @@ export function Footer() {
           </div>
 
           <p className="max-w-2xl font-serif text-2xl leading-relaxed tracking-[-0.02em] text-charcoal sm:text-3xl">
-            평가 없이 시작하는 운동은 재활이 아닙니다.
+            아프지 않은 내일을 돌려드리는 게 저희의 일입니다.
           </p>
         </div>
 
@@ -84,13 +84,13 @@ export function Footer() {
                   Hours
                 </dt>
                 <dd className="text-charcoal">
-                  <ul className="grid list-none gap-1">
+                  <div className="grid gap-1">
                     {site.hours.map((hour) => (
-                      <li key={hour.label}>
+                      <span key={hour.label}>
                         {hour.label} {hour.value}
-                      </li>
+                      </span>
                     ))}
-                  </ul>
+                  </div>
                 </dd>
               </div>
             </dl>

@@ -5,7 +5,7 @@ import { site } from "@/content/site";
 
 /**
  * Main landing hero for the center positioning.
- * Introduces the specialist credential, core promise, and primary booking path.
+ * Introduces the specialist positioning, core promise, and primary booking path.
  */
 export function HomeHero() {
   return (
@@ -17,8 +17,7 @@ export function HomeHero() {
         <div>
           <FadeUp delayMs={0}>
             <p className="mb-8 font-en text-xs font-semibold uppercase tracking-[0.18em] text-brand sm:mb-10">
-              KOREA UNIVERSITY SPORTS MEDICINE · BOARD-CERTIFIED PHYSICAL
-              THERAPIST
+              KOREA UNIVERSITY SPORTS MEDICINE · COMPLEX CASE REHABILITATION
             </p>
           </FadeUp>
 

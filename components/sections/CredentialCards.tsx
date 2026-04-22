@@ -4,22 +4,22 @@ import { SectionHeading } from "@/components/common/SectionHeading";
 
 const credentials = [
   {
-    keyword: "재활전문",
-    label: "BOARD-CERTIFIED PHYSICAL THERAPIST",
+    keyword: "어려운 케이스",
+    label: "COMPLEX CASE FOCUS",
     description:
-      "한국물리치료사협회 인증 재활 전문 자격. 일반 물리치료사와 구분되는 전문 트랙입니다.",
+      "일반 피트니스나 도수치료가 다루기 어려운 만성통증·파킨슨·수술 후 재활을 정면으로 다룹니다. 회피 없이.",
   },
   {
     keyword: "고려대",
     label: "KOREA UNIVERSITY · SPORTS MEDICINE",
     description:
-      "스포츠의학 석사과정 재학. 근거 기반(EBP) 재활을 연구로 뒷받침합니다.",
+      "융합과학대학원 스포츠의학과 석사과정. 근거 기반(EBP) 재활을 연구로 뒷받침합니다.",
   },
   {
-    keyword: "만성통증",
-    label: "CHRONIC MUSCULOSKELETAL PAIN · FOCUS AREA",
+    keyword: "주력 영역",
+    label: "CHRONIC PAIN · NEURO REHAB",
     description:
-      "허리·어깨·팔꿈치·발목. 대표가 직접 평가하고 관리하는 주력 분야입니다.",
+      "허리·어깨·팔꿈치·발목의 만성 통증, 파킨슨·뇌졸중 재활. 1년 이상 반복된 통증과 신경계 질환에 집중합니다.",
   },
 ] as const;
 
@@ -34,7 +34,7 @@ export function CredentialCards() {
         <SectionHeading
           id="credentials-heading"
           kicker="WHY CHOOSE US"
-          title="재활센터는 많습니다. 하지만 이 셋은 드뭅니다."
+          title="재활센터는 많습니다. 하지만 이 세 가지는 드뭅니다."
           align="left"
         />
       </FadeUp>

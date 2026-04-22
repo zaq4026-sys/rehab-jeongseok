@@ -32,7 +32,7 @@ export function BeforeAfterComparison() {
           kicker="METHODOLOGY"
           title="순서가 달랐기 때문에 결과가 달랐습니다."
           description="많은 재활센터가 평가 없이 운동부터 시작합니다. 재활의정석은 평가를 가장 먼저 놓습니다. 이 순서가 회복의 속도와 재발 여부를 결정합니다."
-          align="center"
+          align="left"
         />
       </FadeUp>
 

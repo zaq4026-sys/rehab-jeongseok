@@ -34,7 +34,7 @@ export const customerReviews: CustomerReview[] = [
 ];
 
 export const reviewStats = {
-  naverPlaceCount: "30+",
+  naverPlaceCount: "100+",
   averageRating: "5.0",
   channels: ["네이버 플레이스", "당근마켓"],
 } as const;

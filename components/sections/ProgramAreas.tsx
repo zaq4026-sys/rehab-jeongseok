@@ -58,7 +58,13 @@ export function ProgramAreas() {
           id="programs-heading"
           kicker="FOCUS AREAS"
           title="대표가 직접 평가하고 관리하는 분야입니다."
-          description="통증 부위가 아니라, 그 부위를 만든 움직임의 문제를 찾습니다. 어느 프로그램에 해당하시든 시작은 평가입니다."
+          description={
+            <>
+              통증 부위가 아니라, 그 부위를 만든 움직임의 문제를 찾습니다.
+              <br />
+              어느 프로그램에 해당하시든 시작은 평가입니다.
+            </>
+          }
           align="left"
         />
       </FadeUp>

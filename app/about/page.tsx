@@ -7,7 +7,7 @@ import { LocationCTA } from "@/components/sections/LocationCTA";
 export const metadata: Metadata = {
   title: "About — 재활의정석 | 황제원 대표 소개",
   description:
-    "재활의정석은 평가(Evaluation)에서 시작해 회복과 수행력으로 이어지는 원칙 중심의 재활을 추구합니다. 대표 황제원 물리치료사가 직접 평가하고 관리합니다.",
+    "재활의정석은 평가(Evaluation)에서 시작해 회복과 수행력으로 이어지는 원칙 중심의 재활을 추구합니다. 고려대학교 융합과학대학원 스포츠의학과 석사과정을 밟고 있는 대표 황제원 물리치료사가 직접 평가하고 관리합니다.",
   alternates: { canonical: "/about" },
   openGraph: {
     title: "About — 재활의정석",
@@ -97,7 +97,7 @@ export default function AboutPage() {
                 fill
                 priority
                 sizes="(min-width: 768px) 50vw, 100vw"
-                className="object-cover"
+                className="object-cover object-top"
               />
             </div>
           </FadeUp>
@@ -133,7 +133,7 @@ export default function AboutPage() {
             <SectionTitle>황제원 대표</SectionTitle>
             <div className="mt-10 space-y-7 break-keep font-serif text-xl leading-9 tracking-[-0.01em] text-charcoal/80">
               <p>
-                고려대학교 의과대학원에서 스포츠의학 석사 과정을 밟고
+                고려대학교 융합과학대학원 스포츠의학과 석사 과정을 밟고
                 있으며, 물리치료사 면허를 기반으로 재활 현장에 서왔습니다.
               </p>
               <p>
@@ -170,18 +170,6 @@ export default function AboutPage() {
             </FadeUp>
           ))}
         </div>
-      </PageSection>
-
-      <PageSection>
-        <FadeUp delayMs={0}>
-          <div className="max-w-3xl">
-            <SectionTitle>이력</SectionTitle>
-            <p className="mt-10 break-keep font-serif text-xl leading-9 tracking-[-0.01em] text-charcoal/80">
-              고려대학교 의과대학원 스포츠의학 석사 재학 · 물리치료사 면허 ·
-              병원 재활실 및 스포츠 현장 실무
-            </p>
-          </div>
-        </FadeUp>
       </PageSection>
 
       <LocationCTA />
