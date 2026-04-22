@@ -8,6 +8,7 @@ import "@fontsource/pretendard/800.css";
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
 import { JsonLd } from "@/components/seo/JsonLd";
+import { site } from "@/content/site";
 import { buildLocalBusinessSchema } from "@/lib/seo";
 import "./globals.css";
 
@@ -25,6 +26,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(site.url),
   title: "재활의정석 전문운동센터",
   description:
     "광주 만성 근골격계 통증 재활과 뇌질환 재활을 다루는 재활전문 물리치료사의 전문운동센터",

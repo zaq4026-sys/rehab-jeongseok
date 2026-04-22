@@ -1,6 +1,6 @@
+import Image from "next/image";
 import { CTAButton } from "@/components/common/CTAButton";
 import { FadeUp } from "@/components/common/FadeUp";
-import { PlaceholderImage } from "@/components/common/PlaceholderImage";
 import { Section } from "@/components/common/Section";
 import { site } from "@/content/site";
 
@@ -13,11 +13,15 @@ export function ProfileSummary() {
     <Section tone="ivory" aria-labelledby="profile-heading">
       <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-[1fr_1.3fr] lg:gap-20">
         <FadeUp delayMs={0}>
-          <PlaceholderImage
-            aspect="3:4"
-            label="대표 프로필 사진 자리 · 추후 교체"
-            className="mx-auto w-full max-w-[28rem] lg:max-w-none"
-          />
+          <div className="relative mx-auto aspect-[2/3] w-full max-w-[28rem] overflow-hidden border border-line bg-white lg:max-w-none">
+            <Image
+              src="/images/director/portrait-primary.jpg"
+              alt="재활의정석 대표 황제원 물리치료사"
+              fill
+              sizes="(min-width: 1024px) 40vw, 100vw"
+              className="object-cover"
+            />
+          </div>
         </FadeUp>
 
         <div>
