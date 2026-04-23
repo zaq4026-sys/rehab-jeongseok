@@ -1,0 +1,14 @@
+import {
+  createProgramDetailOgImage,
+  ogContentType,
+  ogSize,
+} from "@/lib/og-image";
+
+export const runtime = "edge";
+export const alt = "파킨슨·신경재활 프로그램";
+export const size = ogSize;
+export const contentType = ogContentType;
+
+export default async function Image() {
+  return createProgramDetailOgImage("파킨슨·신경재활 프로그램");
+}
