@@ -20,6 +20,8 @@ let regularFontDataPromise: Promise<ArrayBuffer> | null = null;
 let boldFontDataPromise: Promise<ArrayBuffer> | null = null;
 let directorImagePromise: Promise<string> | null = null;
 
+const publicOgBaseUrl = "https://rehab-jeongseok.vercel.app/og";
+
 function arrayBufferToBase64(buffer: ArrayBuffer): string {
   const bytes = new Uint8Array(buffer);
   const chunkSize = 0x8000;
@@ -33,11 +35,19 @@ function arrayBufferToBase64(buffer: ArrayBuffer): string {
   return btoa(binary);
 }
 
+async function getPublicOgAsset(fileName: string) {
+  const response = await fetch(`${publicOgBaseUrl}/${fileName}`);
+
+  if (!response.ok) {
+    throw new Error(`Failed to load OG asset: ${fileName}`);
+  }
+
+  return response.arrayBuffer();
+}
+
 async function getRegularFontData() {
   if (!regularFontDataPromise) {
-    regularFontDataPromise = fetch(
-      new URL("../public/og/Pretendard-Regular.woff", import.meta.url),
-    ).then((response) => response.arrayBuffer());
+    regularFontDataPromise = getPublicOgAsset("Pretendard-Regular.woff");
   }
 
   return regularFontDataPromise;
@@ -45,9 +55,7 @@ async function getRegularFontData() {
 
 async function getBoldFontData() {
   if (!boldFontDataPromise) {
-    boldFontDataPromise = fetch(
-      new URL("../public/og/Pretendard-Bold.woff", import.meta.url),
-    ).then((response) => response.arrayBuffer());
+    boldFontDataPromise = getPublicOgAsset("Pretendard-Bold.woff");
   }
 
   return boldFontDataPromise;
@@ -55,13 +63,9 @@ async function getBoldFontData() {
 
 async function getDirectorImageSrc() {
   if (!directorImagePromise) {
-    directorImagePromise = fetch(
-      new URL("../public/og/director.jpg", import.meta.url),
-    )
-      .then((response) => response.arrayBuffer())
-      .then(
-        (buffer) => `data:image/jpeg;base64,${arrayBufferToBase64(buffer)}`,
-      );
+    directorImagePromise = getPublicOgAsset("director.jpg").then(
+      (buffer) => `data:image/jpeg;base64,${arrayBufferToBase64(buffer)}`,
+    );
   }
 
   return directorImagePromise;
