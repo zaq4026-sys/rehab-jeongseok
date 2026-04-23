@@ -2,7 +2,7 @@ import Image from "next/image";
 import { CTAButton } from "@/components/common/CTAButton";
 import { FadeUp } from "@/components/common/FadeUp";
 import { Section } from "@/components/common/Section";
-import { site } from "@/content/site";
+import { NaverBookingLink } from "@/components/ui/NaverBookingLink";
 
 /**
  * Director profile summary for the home page.
@@ -71,13 +71,12 @@ export function ProfileSummary() {
           <FadeUp delayMs={620}>
             <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:gap-5 lg:mt-14">
               <CTAButton href="/about">대표 전체 프로필 보기</CTAButton>
-              <CTAButton
-                href={site.links.naverBooking}
-                external
-                variant="secondary"
+              <NaverBookingLink
+                ariaLabel="네이버 예약 페이지 열기"
+                className="inline-flex min-h-12 items-center justify-center border border-line bg-transparent px-6 text-sm font-semibold text-charcoal transition-colors duration-300 ease-calm hover:border-brand hover:text-brand focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand"
               >
                 1:1 상담 예약
-              </CTAButton>
+              </NaverBookingLink>
             </div>
           </FadeUp>
         </div>

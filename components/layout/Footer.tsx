@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { NaverBookingLink } from "@/components/ui/NaverBookingLink";
 import { mainNavigation } from "@/content/navigation";
 import { site } from "@/content/site";
 
@@ -9,7 +10,6 @@ import { site } from "@/content/site";
  */
 export function Footer() {
   const externalLinks = [
-    { label: "네이버 예약", href: site.links.naverBooking },
     { label: "네이버 플레이스", href: site.links.naverPlace },
     { label: "카카오톡", href: site.kakaoChannelUrl },
     { label: "당근", href: site.links.daangn },
@@ -119,6 +119,14 @@ export function Footer() {
               Channels
             </h3>
             <ul className="grid gap-4">
+              <li>
+                <NaverBookingLink
+                  ariaLabel="네이버 예약 외부 페이지 열기"
+                  className="text-sm font-medium text-charcoal transition-colors duration-300 ease-calm hover:text-brand focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand"
+                >
+                  네이버 예약
+                </NaverBookingLink>
+              </li>
               {externalLinks.map((item) => (
                 <li key={item.href}>
                   <a

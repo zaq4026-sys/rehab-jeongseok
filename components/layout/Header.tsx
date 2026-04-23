@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { CTAButton } from "@/components/common/CTAButton";
+import { NaverBookingLink } from "@/components/ui/NaverBookingLink";
 import { mainNavigation } from "@/content/navigation";
 import { site } from "@/content/site";
 
@@ -102,13 +103,12 @@ export function Header() {
           >
             {site.phone}
           </a>
-          <CTAButton
-            href={site.links.naverBooking}
-            external
+          <NaverBookingLink
             ariaLabel="네이버 예약 페이지 열기"
+            className="inline-flex min-h-12 items-center justify-center bg-brand px-6 text-sm font-semibold text-white transition-colors duration-300 ease-calm hover:bg-brand-dark active:bg-brand-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand"
           >
             1:1 상담 예약
-          </CTAButton>
+          </NaverBookingLink>
         </div>
 
         <CTAButton
@@ -157,14 +157,13 @@ export function Header() {
           </div>
 
           <div className="grid gap-4">
-            <CTAButton
-              href={site.links.naverBooking}
-              external
+            <NaverBookingLink
               ariaLabel="네이버 예약 페이지 열기"
-              className="w-full"
+              onClick={closeMenu}
+              className="inline-flex min-h-12 w-full items-center justify-center bg-brand px-6 text-sm font-semibold text-white transition-colors duration-300 ease-calm hover:bg-brand-dark active:bg-brand-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand"
             >
               1:1 상담 예약
-            </CTAButton>
+            </NaverBookingLink>
             <a
               href={`tel:${site.phone.replaceAll("-", "")}`}
               className="text-center font-en text-xs font-semibold tracking-[0.14em] text-muted"

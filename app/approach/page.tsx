@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Fragment, type ReactNode } from "react";
-import { CTAButton } from "@/components/common/CTAButton";
 import { FadeUp } from "@/components/common/FadeUp";
 import { LocationCTA } from "@/components/sections/LocationCTA";
+import { NaverBookingLink } from "@/components/ui/NaverBookingLink";
 import { site } from "@/content/site";
 
 export const metadata: Metadata = {
@@ -174,14 +174,12 @@ export default function ApproachPage() {
               >
                 전화로 예약하기
               </a>
-              <CTAButton
-                href={site.links.naverBooking}
-                external
-                variant="secondary"
+              <NaverBookingLink
                 ariaLabel="네이버 예약 페이지로 이동 (새 창)"
+                className="inline-flex min-h-12 items-center justify-center border border-line bg-transparent px-6 text-sm font-semibold text-charcoal transition-colors duration-300 ease-calm hover:border-brand hover:text-brand focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand"
               >
                 네이버 예약
-              </CTAButton>
+              </NaverBookingLink>
             </div>
           </div>
         </FadeUp>

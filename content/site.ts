@@ -6,6 +6,11 @@ type SiteHour = {
   closes?: string;
 };
 
+type NaverBookingLinks = {
+  mobile: string;
+  desktop: string;
+};
+
 type SiteConfig = {
   name: string;
   url: string;
@@ -26,15 +31,18 @@ type SiteConfig = {
   parking: string;
   kakaoChannelUrl: string | null;
   links: {
-    naverBooking: string;
+    naverBooking: NaverBookingLinks;
     naverPlace: string;
     naverMap: string;
     daangn: string;
   };
 };
 
-export const NAVER_BOOKING_URL =
-  "https://map.naver.com/p/entry/place/2049088805/ticket";
+export const NAVER_BOOKING_URLS: NaverBookingLinks = {
+  mobile: "https://m.place.naver.com/place/2049088805/ticket",
+  desktop:
+    "https://map.naver.com/p/entry/place/2049088805?placePath=%2Fticket",
+};
 
 export const NAVER_PLACE_URL = "https://map.naver.com/p/entry/place/2049088805";
 
@@ -77,7 +85,7 @@ export const site: SiteConfig = {
   parking: "건물 앞 한샘 주차장 2시간 무료",
   kakaoChannelUrl: null,
   links: {
-    naverBooking: NAVER_BOOKING_URL,
+    naverBooking: NAVER_BOOKING_URLS,
     naverPlace: NAVER_PLACE_URL,
     naverMap: NAVER_PLACE_URL,
     daangn: "https://www.daangn.com/kr/local-profile/pbht2g5gtkc7/",

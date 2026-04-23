@@ -1,6 +1,6 @@
 import { CTAButton } from "@/components/common/CTAButton";
 import { FadeUp } from "@/components/common/FadeUp";
-import { site } from "@/content/site";
+import { NaverBookingLink } from "@/components/ui/NaverBookingLink";
 import type { Program } from "@/content/programs";
 
 type ProgramHeroProps = {
@@ -32,13 +32,12 @@ export function ProgramHero({ program }: ProgramHeroProps) {
 
         <FadeUp delayMs={240}>
           <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:gap-5">
-            <CTAButton
-              href={site.links.naverBooking}
-              external
+            <NaverBookingLink
               ariaLabel="네이버 예약 페이지로 이동 (새 창)"
+              className="inline-flex min-h-12 items-center justify-center bg-brand px-6 text-sm font-semibold text-white transition-colors duration-300 ease-calm hover:bg-brand-dark active:bg-brand-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand"
             >
               첫 평가 예약하기
-            </CTAButton>
+            </NaverBookingLink>
             <CTAButton href="/approach" variant="secondary">
               진행 방식 보기
             </CTAButton>

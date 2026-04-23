@@ -1,5 +1,6 @@
 import { FadeUp } from "@/components/common/FadeUp";
 import { SectionHeading } from "@/components/common/SectionHeading";
+import { NaverBookingLink } from "@/components/ui/NaverBookingLink";
 import { site } from "@/content/site";
 
 const phoneHref = `tel:${site.phone.replaceAll("-", "")}`;
@@ -143,16 +144,13 @@ export function LocationCTA() {
               </p>
 
               <div className="mt-10 grid gap-3 lg:mt-12">
-                <a
-                  href={site.links.naverBooking}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <NaverBookingLink
                   aria-label="네이버 예약 페이지로 이동 (새 창)"
                   className="inline-flex min-h-14 items-center justify-between bg-ivory px-5 font-sans text-sm font-semibold text-charcoal transition-colors duration-300 ease-calm hover:bg-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand"
                 >
                   <span>네이버 예약</span>
                   <span aria-hidden="true">→</span>
-                </a>
+                </NaverBookingLink>
 
                 {site.kakaoChannelUrl ? (
                   <a

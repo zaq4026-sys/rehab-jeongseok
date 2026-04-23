@@ -3,6 +3,7 @@ import { Fragment } from "react";
 import { FadeUp } from "@/components/common/FadeUp";
 import { SectionHeading } from "@/components/common/SectionHeading";
 import { LocationCTA } from "@/components/sections/LocationCTA";
+import { NaverBookingLink } from "@/components/ui/NaverBookingLink";
 import { site } from "@/content/site";
 
 export const metadata: Metadata = {
@@ -23,9 +24,10 @@ type ContactCard = {
   title: string;
   description: string;
   ctaLabel: string;
-  href: string;
+  href?: string;
   external?: boolean;
   primary?: boolean;
+  isNaverBooking?: boolean;
   ariaLabel: string;
 };
 
@@ -36,8 +38,7 @@ const contactCards: ContactCard[] = [
     description:
       "원하는 날짜와 시간을 직접 선택하고 싶은 분. 24시간 예약 가능.",
     ctaLabel: "네이버 예약 페이지 열기",
-    href: site.links.naverBooking,
-    external: true,
+    isNaverBooking: true,
     primary: true,
     ariaLabel: "네이버 예약 페이지 열기 (새 창)",
   },
@@ -77,35 +78,50 @@ function ContactCardLink({ card }: { card: ContactCard }) {
     ? "h-full border border-brand bg-brand-light p-8 transition-all duration-500 ease-calm group-hover:border-brand-dark group-hover:bg-brand-light lg:p-10"
     : "h-full border border-line bg-white p-8 transition-all duration-500 ease-calm group-hover:border-brand group-hover:bg-ivory lg:p-10";
 
+  const content = (
+    <article className={articleClass}>
+      <p className="mb-5 font-en text-[10px] font-semibold uppercase tracking-[0.18em] text-brand lg:mb-6">
+        {card.kicker}
+      </p>
+      <h3 className="break-keep font-serif text-2xl font-semibold leading-[1.25] tracking-[-0.02em] text-charcoal lg:text-3xl">
+        {card.title}
+      </h3>
+      <div className="my-6 h-px w-10 bg-line transition-all duration-500 ease-calm group-hover:w-16 group-hover:bg-brand lg:my-8" />
+      <p className="mb-8 break-keep font-sans text-sm leading-7 text-muted lg:mb-10 lg:text-base lg:leading-8">
+        {card.description}
+      </p>
+      <div className="flex items-center gap-2 font-en text-[11px] font-semibold uppercase tracking-[0.18em] text-muted transition-colors duration-500 ease-calm group-hover:text-brand">
+        <span>{card.ctaLabel}</span>
+        <span
+          aria-hidden="true"
+          className="transition-transform duration-500 ease-calm group-hover:translate-x-1"
+        >
+          →
+        </span>
+      </div>
+    </article>
+  );
+
+  const linkClass =
+    "group block h-full focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand";
+
+  if (card.isNaverBooking) {
+    return (
+      <NaverBookingLink ariaLabel={card.ariaLabel} className={linkClass}>
+        {content}
+      </NaverBookingLink>
+    );
+  }
+
   return (
     <a
       href={card.href}
       target={card.external ? "_blank" : undefined}
       rel={card.external ? "noopener noreferrer" : undefined}
       aria-label={card.ariaLabel}
-      className="group block h-full focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand"
+      className={linkClass}
     >
-      <article className={articleClass}>
-        <p className="mb-5 font-en text-[10px] font-semibold uppercase tracking-[0.18em] text-brand lg:mb-6">
-          {card.kicker}
-        </p>
-        <h3 className="break-keep font-serif text-2xl font-semibold leading-[1.25] tracking-[-0.02em] text-charcoal lg:text-3xl">
-          {card.title}
-        </h3>
-        <div className="my-6 h-px w-10 bg-line transition-all duration-500 ease-calm group-hover:w-16 group-hover:bg-brand lg:my-8" />
-        <p className="mb-8 break-keep font-sans text-sm leading-7 text-muted lg:mb-10 lg:text-base lg:leading-8">
-          {card.description}
-        </p>
-        <div className="flex items-center gap-2 font-en text-[11px] font-semibold uppercase tracking-[0.18em] text-muted transition-colors duration-500 ease-calm group-hover:text-brand">
-          <span>{card.ctaLabel}</span>
-          <span
-            aria-hidden="true"
-            className="transition-transform duration-500 ease-calm group-hover:translate-x-1"
-          >
-            →
-          </span>
-        </div>
-      </article>
+      {content}
     </a>
   );
 }

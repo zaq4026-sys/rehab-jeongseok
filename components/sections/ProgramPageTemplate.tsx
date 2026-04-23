@@ -1,7 +1,6 @@
-import { CTAButton } from "@/components/common/CTAButton";
 import { Section } from "@/components/common/Section";
 import { SectionHeading } from "@/components/common/SectionHeading";
-import { site } from "@/content/site";
+import { NaverBookingLink } from "@/components/ui/NaverBookingLink";
 
 type ProgramPageTemplateProps = {
   title: string;
@@ -90,14 +89,12 @@ export function ProgramPageTemplate({
             </article>
           ))}
         </div>
-        <CTAButton
-          href={site.links.naverBooking}
-          external
+        <NaverBookingLink
           ariaLabel="네이버 예약 페이지 열기"
-          className="mt-10"
+          className="mt-10 inline-flex min-h-12 items-center justify-center bg-brand px-6 text-sm font-semibold text-white transition-colors duration-300 ease-calm hover:bg-brand-dark active:bg-brand-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand"
         >
           {ctaText}
-        </CTAButton>
+        </NaverBookingLink>
       </Section>
     </main>
   );
