@@ -141,7 +141,7 @@ export async function createHomeOgImage() {
             marginBottom: 18,
           }}
         >
-          운동전문 물리치료사
+          재활운동전문 물리치료사
         </div>
         <div
           style={{

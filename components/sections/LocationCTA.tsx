@@ -168,12 +168,15 @@ export function LocationCTA() {
                 <a
                   href={phoneHref}
                   aria-label={`전화로 상담 문의: ${site.phoneDisplay}`}
-                  className="flex min-h-14 flex-col items-center justify-center gap-1 border border-ivory/50 px-6 py-3 text-center text-ivory transition-colors duration-300 ease-calm hover:border-brand focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand"
+                  className="block min-h-14 border border-ivory/50 px-6 py-3 text-center text-ivory transition-colors duration-300 ease-calm hover:border-brand focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand"
                 >
-                  <span className="font-en text-[10px] font-semibold uppercase tracking-[0.2em] text-ivory/70">
+                  <span
+                    aria-hidden="true"
+                    className="block font-en text-[10px] font-semibold uppercase tracking-[0.2em] text-ivory/70"
+                  >
                     CALL DIRECTLY
                   </span>
-                  <span className="font-sans text-base font-semibold">
+                  <span className="mt-1 block font-sans text-base font-semibold">
                     {site.phoneDisplay}
                   </span>
                 </a>

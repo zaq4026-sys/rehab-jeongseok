@@ -34,7 +34,7 @@ export function HomeHero() {
 
           <FadeUp delayMs={240}>
             <p className="mt-8 max-w-xl font-sans text-base leading-8 text-muted sm:text-lg sm:leading-9 lg:mt-10">
-              운동전문 물리치료사가 직접 평가하고, 직접 설계합니다.
+              재활운동전문 물리치료사가 직접 평가하고, 직접 설계합니다.
               <br />
               허리·어깨·팔꿈치·발목의 만성 통증, 그리고 파킨슨·뇌졸중
               재활까지.
@@ -62,7 +62,6 @@ export function HomeHero() {
         <FadeUp delayMs={200}>
           <PlaceholderImage
             aspect="3:4"
-            label="대표 프로필 사진 자리 · 추후 교체"
             className="mx-auto w-full max-w-[28rem] lg:max-w-none"
           />
         </FadeUp>
