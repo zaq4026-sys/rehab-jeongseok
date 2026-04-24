@@ -74,12 +74,12 @@ export function LocationCTA() {
                   <dt className="font-en text-[10px] font-semibold uppercase tracking-[0.18em] text-muted">
                     HOURS
                   </dt>
-                  <dd className="font-sans text-base leading-8 text-charcoal">
-                    <div className="grid gap-1">
+                  <dd>
+                    <div className="grid gap-1 font-sans text-base leading-8 text-charcoal">
                       {site.hours.map((hour) => (
-                        <span key={hour.label} className="block">
+                        <div key={hour.label}>
                           {hour.label} {hour.value}
-                        </span>
+                        </div>
                       ))}
                     </div>
                   </dd>
@@ -168,12 +168,12 @@ export function LocationCTA() {
                 <a
                   href={phoneHref}
                   aria-label={`전화로 상담 문의: ${site.phoneDisplay}`}
-                  className="group border border-ivory/50 px-5 py-4 text-ivory transition-colors duration-300 ease-calm hover:border-brand focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand"
+                  className="flex min-h-14 flex-col items-center justify-center gap-1 border border-ivory/50 px-6 py-3 text-center text-ivory transition-colors duration-300 ease-calm hover:border-brand focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand"
                 >
-                  <span className="mb-2 block font-en text-[10px] font-semibold uppercase tracking-[0.18em] text-ivory/60 transition-colors duration-300 ease-calm group-hover:text-brand">
+                  <span className="font-en text-[10px] font-semibold uppercase tracking-[0.2em] text-ivory/70">
                     CALL DIRECTLY
                   </span>
-                  <span className="font-en text-sm font-semibold tracking-[0.12em]">
+                  <span className="font-sans text-base font-semibold">
                     {site.phoneDisplay}
                   </span>
                 </a>

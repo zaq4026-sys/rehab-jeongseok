@@ -83,12 +83,12 @@ export function Footer() {
                 <dt className="mb-1 font-en text-[11px] font-semibold uppercase tracking-[0.16em] text-muted">
                   Hours
                 </dt>
-                <dd className="text-charcoal">
-                  <div className="grid gap-1">
+                <dd>
+                  <div className="grid gap-1 text-charcoal">
                     {site.hours.map((hour) => (
-                      <span key={hour.label} className="block">
+                      <div key={hour.label}>
                         {hour.label} {hour.value}
-                      </span>
+                      </div>
                     ))}
                   </div>
                 </dd>

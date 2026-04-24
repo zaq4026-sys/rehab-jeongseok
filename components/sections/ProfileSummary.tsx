@@ -18,7 +18,7 @@ export function ProfileSummary() {
               src="/images/director/portrait-primary.jpg"
               alt="재활의정석 대표 황제원 물리치료사"
               fill
-              sizes="(min-width: 1024px) 40vw, 100vw"
+              sizes="(min-width: 1024px) 40vw, 28rem"
               className="object-cover object-top"
             />
           </div>
