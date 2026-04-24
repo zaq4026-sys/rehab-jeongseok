@@ -1,4 +1,5 @@
 import { FadeUp } from "@/components/common/FadeUp";
+import { PlaceholderImage } from "@/components/common/PlaceholderImage";
 import type { Program } from "@/content/programs";
 
 type ProgramApproachProps = {
@@ -70,6 +71,16 @@ export function ProgramApproach({ program }: ProgramApproachProps) {
             </FadeUp>
           ))}
         </div>
+
+        <FadeUp delayMs={480}>
+          <div className="mt-12 max-w-3xl">
+            <PlaceholderImage
+              aspect="4:3"
+              label="EXERCISE GIF"
+              futureSrc={program.assetSlots.exerciseGif}
+            />
+          </div>
+        </FadeUp>
       </div>
     </section>
   );

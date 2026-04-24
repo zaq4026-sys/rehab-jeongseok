@@ -1,6 +1,6 @@
+import Image from "next/image";
 import { CTAButton } from "@/components/common/CTAButton";
 import { FadeUp } from "@/components/common/FadeUp";
-import { PlaceholderImage } from "@/components/common/PlaceholderImage";
 import { NaverBookingLink } from "@/components/ui/NaverBookingLink";
 
 /**
@@ -60,10 +60,16 @@ export function HomeHero() {
         </div>
 
         <FadeUp delayMs={200}>
-          <PlaceholderImage
-            aspect="3:4"
-            className="mx-auto w-full max-w-[28rem] lg:max-w-none"
-          />
+          <div className="relative mx-auto aspect-[3/4] w-full max-w-[28rem] overflow-hidden border border-line bg-white lg:max-w-none">
+            <Image
+              src="/images/director/portrait-primary.jpg"
+              alt="재활의정석 대표 황제원 물리치료사"
+              fill
+              priority
+              sizes="(min-width: 1024px) 40vw, 28rem"
+              className="object-cover object-top"
+            />
+          </div>
         </FadeUp>
       </div>
 

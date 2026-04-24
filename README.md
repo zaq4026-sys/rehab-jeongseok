@@ -57,6 +57,56 @@ npm run build
 - 개인정보처리방침 / 이용약관 페이지 생성 후 Footer 링크 교체
 - OG 이미지 생성: `logo-vertical-dark.png` 기반 1200x630
 
+## 사진/GIF 업로드 가이드
+
+현재 사이트는 사진과 GIF가 들어갈 자리를 플레이스홀더로 먼저 선언해 두었습니다.
+플레이스홀더 안의 `FUTURE:` 경로를 기준으로 파일을 준비하고, 이후 해당 위치를 실제
+`<Image />` 또는 GIF 렌더링으로 교체하면 됩니다.
+
+### 메인 랜딩
+
+- `public/images/director/portrait-primary.jpg`
+  - 메인 HomeHero와 `/about` Hero에서 이미 사용 중입니다.
+
+### About 페이지 Case Story
+
+- `public/images/cases/case-shoulder-01.jpg`
+
+### 각 프로그램 상세 페이지
+
+- `public/images/programs/{slug}/hero.jpg`
+- `public/images/programs/{slug}/assessment.gif`
+- `public/images/programs/{slug}/exercise-01.gif`
+
+`slug` 값:
+
+- `lower-back`
+- `neck-shoulder`
+- `knee`
+- `post-surgery`
+- `parkinsons`
+- `athlete`
+
+### 파일 규격 권장
+
+- 히어로 이미지: `1200×900`, JPEG, `200–400KB`
+- 섹션 내부 사진: `800×600`, JPEG, `100–250KB`
+- 프로그램 GIF: `800×600`, `3–5초`, GIF, `1–2MB` 이하
+
+### 적용 순서
+
+1. 해당 경로에 원본 사진 또는 GIF 준비
+2. 플레이스홀더에 표시된 `FUTURE:` 경로와 파일명 확인
+3. 해당 위치를 실제 `<Image />` 또는 GIF 마크업으로 교체
+4. `git add` → `git commit` → `git push`
+5. Vercel 자동 배포 확인
+
+### 주의
+
+- 세로 이미지(portrait)를 가로 섹션에 그대로 쓰면 레이아웃이 무너질 수 있습니다.
+- GIF가 2MB를 넘기면 모바일 로딩이 크게 느려집니다.
+- 파일명 규칙은 반드시 유지합니다.
+
 ## 주요 경로
 
 ```txt

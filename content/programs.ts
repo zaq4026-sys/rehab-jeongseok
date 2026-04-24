@@ -24,6 +24,11 @@ export type Program = {
     zero30: string;
     beyond50: string;
   };
+  assetSlots: {
+    hero: string;
+    assessmentGif: string;
+    exerciseGif: string;
+  };
   firstEval: string[];
   seo: {
     title: string;
@@ -31,6 +36,14 @@ export type Program = {
     keywords: string[];
   };
 };
+
+function createProgramAssetSlots(slug: ProgramSlug) {
+  return {
+    hero: `/images/programs/${slug}/hero.jpg`,
+    assessmentGif: `/images/programs/${slug}/assessment.gif`,
+    exerciseGif: `/images/programs/${slug}/exercise-01.gif`,
+  };
+}
 
 export const PROGRAMS: Program[] = [
   {
@@ -64,6 +77,7 @@ export const PROGRAMS: Program[] = [
       beyond50:
         "코어와 둔근이 허리를 대신 지탱하는 몸. 재발 없이 운동까지 복귀합니다.",
     },
+    assetSlots: createProgramAssetSlots("lower-back"),
     firstEval: [
       "통증이 발생하는 정확한 자세·방향·타이밍",
       "고관절 가동 범위와 좌우 비대칭",
@@ -113,6 +127,7 @@ export const PROGRAMS: Program[] = [
       beyond50:
         "자세가 무너져도 스스로 회복할 수 있는 어깨·흉추 가동성. 재발하지 않는 몸.",
     },
+    assetSlots: createProgramAssetSlots("neck-shoulder"),
     firstEval: [
       "경추 가동 범위와 통증 유발 방향",
       "견갑골 움직임 패턴 (Scapular rhythm)",
@@ -161,6 +176,7 @@ export const PROGRAMS: Program[] = [
         "일상 보행과 장시간 서기에서 무릎이 걸림돌이 되지 않습니다.",
       beyond50: "러닝·등산·스포츠 활동 복귀. 무릎이 다시 아프지 않을 몸.",
     },
+    assetSlots: createProgramAssetSlots("knee"),
     firstEval: [
       "무릎 가동 범위와 통증 유발 동작",
       "고관절 외전·외회전 근력 (둔중근)",
@@ -209,6 +225,7 @@ export const PROGRAMS: Program[] = [
       zero30: "일상 복귀 완료. 수술 전에 하던 활동 대부분이 가능해집니다.",
       beyond50: "수술 전보다 강한 몸. 재부상 예방 패턴까지 장착합니다.",
     },
+    assetSlots: createProgramAssetSlots("post-surgery"),
     firstEval: [
       "수술 부위 가동 범위와 조직 상태",
       "의료진 소견서·운동 제한 범위 확인",
@@ -258,6 +275,7 @@ export const PROGRAMS: Program[] = [
       beyond50:
         "장기적으로 기능을 유지할 수 있는 운동 습관 내재화. 보호자 동반 가능.",
     },
+    assetSlots: createProgramAssetSlots("parkinsons"),
     firstEval: [
       "보행 속도·보폭·좌우 대칭",
       "정적·동적 균형 능력",
@@ -305,6 +323,7 @@ export const PROGRAMS: Program[] = [
       zero30: "종목 특이적 동작 복귀. 감속·방향전환 시 안정성 확보.",
       beyond50: "경기 강도 복귀. 재부상 예방 패턴 내재화.",
     },
+    assetSlots: createProgramAssetSlots("athlete"),
     firstEval: [
       "종목 특이적 핵심 동작 수행력",
       "좌우 근력·점프·가동성 비대칭",

@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import type { ReactNode } from "react";
+import type { HTMLAttributes, ReactNode } from "react";
 import { FadeUp } from "@/components/common/FadeUp";
+import { PlaceholderImage } from "@/components/common/PlaceholderImage";
 import { LocationCTA } from "@/components/sections/LocationCTA";
 
 export const metadata: Metadata = {
@@ -53,12 +54,13 @@ function Eyebrow({ children }: { children: string }) {
 function PageSection({
   children,
   className = "",
+  ...props
 }: {
   children: ReactNode;
   className?: string;
-}) {
+} & HTMLAttributes<HTMLElement>) {
   return (
-    <section className={`py-24 md:py-32 ${className}`}>
+    <section className={`py-24 md:py-32 ${className}`} {...props}>
       <div className="mx-auto max-w-6xl px-6">{children}</div>
     </section>
   );
@@ -169,6 +171,76 @@ export default function AboutPage() {
               </article>
             </FadeUp>
           ))}
+        </div>
+      </PageSection>
+
+      <PageSection aria-labelledby="case-story-heading">
+        <div className="grid gap-12 lg:grid-cols-[1.3fr_1fr] lg:gap-16">
+          <div>
+            <FadeUp delayMs={0}>
+              <Eyebrow>CASE STORY</Eyebrow>
+              <h2
+                id="case-story-heading"
+                className="break-keep font-serif text-3xl font-semibold tracking-[-0.025em] text-charcoal lg:text-4xl xl:text-5xl"
+              >
+                1년을 돌아 저희 센터에 오신 어머님
+              </h2>
+            </FadeUp>
+
+            <div className="mt-10 grid gap-6 lg:gap-8">
+              <FadeUp delayMs={120}>
+                <p className="break-keep font-serif text-base leading-8 text-charcoal lg:text-lg">
+                  60대 어머님께서 회전근개 파열 진단을 받으신 후 1년간 여러
+                  방법을 시도하셨습니다. 병원 치료, 필라테스, 요가까지
+                  시도하셨지만 머리 위로 손이 올라가지 않는 상태가
+                  계속되었고, 수소문 끝에 저희 센터를 찾아 오셨습니다.
+                </p>
+              </FadeUp>
+
+              <FadeUp delayMs={240}>
+                <p className="break-keep font-serif text-base leading-8 text-charcoal lg:text-lg">
+                  평가로 확인된 문제는 분명했습니다. 어깨 하나가 막힌 게
+                  아니라, 그 어깨를 지탱하는 흉추·견갑·회전근개 전체의
+                  움직임이 오래 멈춰 있었습니다. 막혀 있던 구간을 하나씩
+                  열어가는 운동으로 설계했습니다.
+                </p>
+              </FadeUp>
+
+              <FadeUp delayMs={360}>
+                <p className="break-keep font-serif text-base leading-8 text-charcoal lg:text-lg">
+                  다섯 차례 세션 이후 어머님은 뒷짐을 지실 수 있게 되셨고,
+                  팔을 90도 이상 드실 수 있게 되셨습니다. &quot;운동
+                  직후에는 얼얼한데 갈수록 나아가는 느낌이 든다&quot;고
+                  말씀하시며, 회원권을 추가로 이어가기로 하셨습니다.
+                </p>
+              </FadeUp>
+
+              <FadeUp delayMs={480}>
+                <div className="border-l-2 border-brand pl-6">
+                  <p className="break-keep font-serif text-lg font-medium leading-8 text-charcoal lg:text-xl">
+                    저희가 하는 일은 분명합니다.
+                    <br />
+                    병원에서 진단과 치료를 받으신 분,
+                    <br />
+                    또는 여러 방법을 시도했지만 움직임이 돌아오지 않는 분의
+                    &quot;운동으로 풀어야 하는 구간&quot;을 담당합니다.
+                  </p>
+                  <p className="mt-4 font-en text-[10px] uppercase tracking-[0.18em] text-muted">
+                    — 재활의정석 전문운동센터
+                  </p>
+                </div>
+              </FadeUp>
+            </div>
+          </div>
+
+          <FadeUp delayMs={200}>
+            <PlaceholderImage
+              aspect="3:4"
+              label="CASE STORY IMAGE"
+              futureSrc="/images/cases/case-shoulder-01.jpg"
+              className="mx-auto w-full max-w-[24rem] lg:max-w-none"
+            />
+          </FadeUp>
         </div>
       </PageSection>
 

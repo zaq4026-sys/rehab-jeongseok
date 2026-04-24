@@ -1,5 +1,6 @@
 import { CTAButton } from "@/components/common/CTAButton";
 import { FadeUp } from "@/components/common/FadeUp";
+import { PlaceholderImage } from "@/components/common/PlaceholderImage";
 import { NaverBookingLink } from "@/components/ui/NaverBookingLink";
 import type { Program } from "@/content/programs";
 
@@ -15,38 +16,50 @@ export function ProgramHero({ program }: ProgramHeroProps) {
   return (
     <section className="bg-ivory py-28 md:py-36">
       <div className="mx-auto max-w-6xl px-6">
-        <FadeUp delayMs={0}>
-          <p className="mb-6 font-en text-xs font-semibold uppercase tracking-[0.18em] text-brand">
-            PROGRAM · {program.cardLabel}
-          </p>
-          <h1 className="max-w-4xl break-keep font-serif text-5xl font-semibold leading-[1.08] tracking-[-0.03em] text-charcoal md:text-6xl lg:text-7xl">
-            {program.heroHeadline}
-          </h1>
-        </FadeUp>
+        <div className="grid gap-12 lg:grid-cols-[1.2fr_0.8fr] lg:items-center">
+          <div>
+            <FadeUp delayMs={0}>
+              <p className="mb-6 font-en text-xs font-semibold uppercase tracking-[0.18em] text-brand">
+                PROGRAM · {program.cardLabel}
+              </p>
+              <h1 className="max-w-4xl break-keep font-serif text-5xl font-semibold leading-[1.08] tracking-[-0.03em] text-charcoal md:text-6xl lg:text-7xl">
+                {program.heroHeadline}
+              </h1>
+            </FadeUp>
 
-        <FadeUp delayMs={120}>
-          <p className="mt-8 max-w-3xl break-keep font-serif text-xl leading-9 tracking-[-0.01em] text-charcoal/80 md:text-2xl md:leading-10">
-            {program.heroSubtext}
-          </p>
-        </FadeUp>
+            <FadeUp delayMs={120}>
+              <p className="mt-8 max-w-3xl break-keep font-serif text-xl leading-9 tracking-[-0.01em] text-charcoal/80 md:text-2xl md:leading-10">
+                {program.heroSubtext}
+              </p>
+            </FadeUp>
 
-        <FadeUp delayMs={240}>
-          <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:gap-5">
-            <NaverBookingLink
-              ariaLabel="네이버 예약 페이지로 이동 (새 창)"
-              className="inline-flex min-h-12 items-center justify-center bg-brand px-6 text-sm font-semibold text-white transition-colors duration-300 ease-calm hover:bg-brand-dark active:bg-brand-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand"
-            >
-              첫 평가 예약하기
-            </NaverBookingLink>
-            <CTAButton href="/approach" variant="secondary">
-              진행 방식 보기
-            </CTAButton>
+            <FadeUp delayMs={240}>
+              <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:gap-5">
+                <NaverBookingLink
+                  ariaLabel="네이버 예약 페이지로 이동 (새 창)"
+                  className="inline-flex min-h-12 items-center justify-center bg-brand px-6 text-sm font-semibold text-white transition-colors duration-300 ease-calm hover:bg-brand-dark active:bg-brand-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand"
+                >
+                  첫 평가 예약하기
+                </NaverBookingLink>
+                <CTAButton href="/approach" variant="secondary">
+                  진행 방식 보기
+                </CTAButton>
+              </div>
+              <p className="mt-6 break-keep font-sans text-sm leading-7 text-muted">
+                대표가 직접 평가·관리합니다. 프로그램은 첫 평가 이후 몸
+                상태에 맞춰 조정됩니다.
+              </p>
+            </FadeUp>
           </div>
-          <p className="mt-6 break-keep font-sans text-sm leading-7 text-muted">
-            대표가 직접 평가·관리합니다. 프로그램은 첫 평가 이후 몸 상태에
-            맞춰 조정됩니다.
-          </p>
-        </FadeUp>
+
+          <FadeUp delayMs={200}>
+            <PlaceholderImage
+              aspect="16:9"
+              label="PROGRAM HERO IMAGE"
+              futureSrc={program.assetSlots.hero}
+            />
+          </FadeUp>
+        </div>
       </div>
     </section>
   );
