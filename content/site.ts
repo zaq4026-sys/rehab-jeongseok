@@ -48,7 +48,7 @@ export const NAVER_PLACE_URL = "https://map.naver.com/p/entry/place/2049088805";
 
 export const site: SiteConfig = {
   name: "재활의정석 전문운동센터",
-  url: "https://rehab-jeongseok.vercel.app",
+  url: "https://rehabjeongseok.com",
   phone: "062-447-7377",
   phoneDisplay: "062-447-7377",
   address: {

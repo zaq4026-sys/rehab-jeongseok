@@ -20,7 +20,7 @@ let regularFontDataPromise: Promise<ArrayBuffer> | null = null;
 let boldFontDataPromise: Promise<ArrayBuffer> | null = null;
 let directorImagePromise: Promise<string> | null = null;
 
-const publicOgBaseUrl = "https://rehab-jeongseok.vercel.app/og";
+const publicOgBaseUrl = "https://rehabjeongseok.com/og";
 
 function arrayBufferToBase64(buffer: ArrayBuffer): string {
   const bytes = new Uint8Array(buffer);
