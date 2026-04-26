@@ -31,7 +31,7 @@ export const metadata: Metadata = {
   description:
     "광주 만성 근골격계 통증 재활과 뇌질환 재활을 다루는 재활운동전문 물리치료사의 전문운동센터",
   verification: {
-    // TODO: Google Search Console verification key 추가 예정.
+    google: "PvSWvnEUPum7sgbz35p1nHht1qGIf41AuvHr33wf518",
     other: {
       "naver-site-verification": "6cedc004920ae6d6bef2cad5d392c1bd84ccc804",
     },
