@@ -10,7 +10,7 @@ import { site } from "@/content/site";
 
 /**
  * Sticky site header with desktop navigation and an accessible mobile overlay menu.
- * Uses the horizontal light logo on the ivory background and routes booking externally.
+ * Uses a crisp symbol plus HTML brand text on the ivory background.
  */
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -70,18 +70,26 @@ export function Header() {
         <Link
           href="/"
           aria-label={`${site.name} 홈`}
-          className="inline-flex items-center focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand"
+          className="inline-flex items-center gap-2.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand"
           onClick={closeMenu}
         >
           <Image
-            src="/images/brand/logo-horizontal-light.png"
-            alt="재활의정석 전문운동센터"
-            width={2105}
-            height={690}
+            src="/images/brand/logo-symbol-header.png"
+            alt=""
+            width={512}
+            height={512}
             priority
-            sizes="(max-width: 1024px) 36px, 44px"
-            className="h-11 w-auto sm:h-12 lg:h-14"
+            sizes="40px"
+            className="h-9 w-9 sm:h-10 sm:w-10"
           />
+          <span className="flex flex-col leading-none">
+            <span className="font-sans text-base font-extrabold tracking-[-0.02em] text-charcoal lg:text-lg">
+              재활의정석
+            </span>
+            <span className="mt-1 font-sans text-[11px] font-semibold tracking-[0.12em] text-muted lg:text-xs">
+              전문운동센터
+            </span>
+          </span>
         </Link>
 
         <nav aria-label="주요 메뉴" className="hidden items-center gap-8 lg:flex">

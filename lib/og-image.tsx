@@ -18,8 +18,9 @@ const colors = {
 
 let regularFontDataPromise: Promise<ArrayBuffer> | null = null;
 let boldFontDataPromise: Promise<ArrayBuffer> | null = null;
-let directorImagePromise: Promise<string> | null = null;
+let brandLogoImagePromise: Promise<string> | null = null;
 
+const publicAssetBaseUrl = "https://rehabjeongseok.com";
 const publicOgBaseUrl = "https://rehabjeongseok.com/og";
 
 function arrayBufferToBase64(buffer: ArrayBuffer): string {
@@ -45,6 +46,20 @@ async function getPublicOgAsset(fileName: string) {
   return response.arrayBuffer();
 }
 
+async function getPublicAsset(path: string) {
+  let response = await fetch(`${publicAssetBaseUrl}${path}`);
+
+  if (!response.ok) {
+    response = await fetch(`http://127.0.0.1:3000${path}`);
+  }
+
+  if (!response.ok) {
+    throw new Error(`Failed to load public asset: ${path}`);
+  }
+
+  return response.arrayBuffer();
+}
+
 async function getRegularFontData() {
   if (!regularFontDataPromise) {
     regularFontDataPromise = getPublicOgAsset("Pretendard-Regular.woff");
@@ -61,14 +76,14 @@ async function getBoldFontData() {
   return boldFontDataPromise;
 }
 
-async function getDirectorImageSrc() {
-  if (!directorImagePromise) {
-    directorImagePromise = getPublicOgAsset("director.jpg").then(
-      (buffer) => `data:image/jpeg;base64,${arrayBufferToBase64(buffer)}`,
-    );
+async function getBrandLogoImageSrc() {
+  if (!brandLogoImagePromise) {
+    brandLogoImagePromise = getPublicAsset(
+      "/images/brand/logo-vertical-dark-card.png",
+    ).then((buffer) => `data:image/png;base64,${arrayBufferToBase64(buffer)}`);
   }
 
-  return directorImagePromise;
+  return brandLogoImagePromise;
 }
 
 async function createImageResponse(element: ReactElement) {
@@ -116,7 +131,7 @@ function Root({ children }: { children: ReactNode }) {
 }
 
 export async function createHomeOgImage() {
-  const directorSrc = await getDirectorImageSrc();
+  const brandLogoSrc = await getBrandLogoImageSrc();
 
   return createImageResponse(
     <Root>
@@ -188,31 +203,25 @@ export async function createHomeOgImage() {
       <div
         style={{
           position: "absolute",
-          top: 0,
-          right: 0,
-          width: 480,
-          height: 630,
+          top: 108,
+          right: 74,
+          width: 390,
+          height: 184,
           display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
           overflow: "hidden",
+          border: "1px solid rgba(201,169,110,0.36)",
+          background: "#1C9A99",
         }}
       >
         <img
-          src={directorSrc}
+          src={brandLogoSrc}
           alt=""
           style={{
             width: "100%",
             height: "100%",
             objectFit: "cover",
-            objectPosition: "center top",
-            filter: "grayscale(12%) contrast(1.04)",
-          }}
-        />
-        <div
-          style={{
-            position: "absolute",
-            inset: 0,
-            background:
-              "linear-gradient(90deg, #0A0A0A 0%, rgba(10,10,10,0.78) 12%, rgba(10,10,10,0.18) 42%, rgba(10,10,10,0) 100%)",
           }}
         />
       </div>
@@ -229,6 +238,7 @@ export async function createHomeOgImage() {
 }
 
 export async function createProgramsOgImage() {
+  const brandLogoSrc = await getBrandLogoImageSrc();
   const cards = ["허리·골반", "목·어깨", "파킨슨·신경재활"];
 
   return createImageResponse(
@@ -310,6 +320,20 @@ export async function createProgramsOgImage() {
         </div>
       </div>
 
+      <img
+        src={brandLogoSrc}
+        alt=""
+        style={{
+          position: "absolute",
+          right: 70,
+          top: 58,
+          width: 230,
+          height: 108,
+          objectFit: "cover",
+          border: "1px solid rgba(201,169,110,0.30)",
+        }}
+      />
+
       <div
         style={{
           position: "absolute",
@@ -322,6 +346,8 @@ export async function createProgramsOgImage() {
 }
 
 export async function createProgramDetailOgImage(title: string) {
+  const brandLogoSrc = await getBrandLogoImageSrc();
+
   return createImageResponse(
     <Root>
       <div
@@ -376,6 +402,20 @@ export async function createProgramDetailOgImage(title: string) {
           대표가 직접 평가하고 관리하는 1:1 재활운동
         </div>
       </div>
+
+      <img
+        src={brandLogoSrc}
+        alt=""
+        style={{
+          position: "absolute",
+          right: 76,
+          top: 64,
+          width: 250,
+          height: 118,
+          objectFit: "cover",
+          border: "1px solid rgba(201,169,110,0.30)",
+        }}
+      />
 
       <div
         style={{

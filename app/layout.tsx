@@ -30,6 +30,13 @@ export const metadata: Metadata = {
   title: "재활의정석 전문운동센터",
   description:
     "광주 만성 근골격계 통증 재활과 뇌질환 재활을 다루는 재활운동전문 물리치료사의 전문운동센터",
+  icons: {
+    icon: [
+      { url: "/favicon.ico" },
+      { url: "/icon.png", sizes: "512x512", type: "image/png" },
+    ],
+    apple: [{ url: "/apple-icon.png", sizes: "180x180", type: "image/png" }],
+  },
   verification: {
     google: "PvSWvnEUPum7sgbz35p1nHht1qGIf41AuvHr33wf518",
     other: {

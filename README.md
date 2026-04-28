@@ -43,19 +43,17 @@ npm run build
 
 ## TODO
 
-- `public/images/brand/`에 로고 파일 배치
-  - `logo-horizontal-light.png`
-  - `logo-vertical-light.png`
-  - `logo-horizontal-dark.png`
-  - `logo-vertical-dark.png`
-  - `source-logo.ai`
-- `public/images/brand/`의 로고 PNG 파일들을 투명 배경 버전으로 교체 필요. 현재 흰색 배경 때문에 ivory 배경 위에서 플레이트가 드러남. 원본 AI 파일에서 투명 배경으로 재내보내기.
+- `public/images/brand/` 새 고화질 로고 시스템 적용
+  - Header: `logo-symbol-header.png` + HTML 텍스트
+  - Footer: `logo-horizontal-dark-card.png`
+  - Favicon: `favicon.ico`, `icon.png`, `apple-icon.png`
+  - OG: `logo-vertical-dark-card.png`
 - 프로덕션 전 `PretendardVariable.woff2`를 `public/fonts/`에 배치하고, `@fontsource/pretendard` 대신 `next/font/local`로 전환
 - Vercel 배포 도메인 확정 후 `https://TODO-domain.com` 교체
 - 센터 정확한 주소 확정 후 `content/site.ts`의 `address.text` 교체
 - 네이버 웹마스터도구 / 구글 서치콘솔 인증 메타값 입력
 - 개인정보처리방침 / 이용약관 페이지 생성 후 Footer 링크 교체
-- OG 이미지 생성: `logo-vertical-dark.png` 기반 1200x630
+- OG 이미지는 새 브랜드 로고 카드를 포함해 자동 생성
 
 ## 사진/GIF 업로드 가이드
 
