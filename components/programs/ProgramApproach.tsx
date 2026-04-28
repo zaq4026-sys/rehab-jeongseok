@@ -1,5 +1,5 @@
+import Image from "next/image";
 import { FadeUp } from "@/components/common/FadeUp";
-import { PlaceholderImage } from "@/components/common/PlaceholderImage";
 import type { Program } from "@/content/programs";
 
 type ProgramApproachProps = {
@@ -73,12 +73,16 @@ export function ProgramApproach({ program }: ProgramApproachProps) {
         </div>
 
         <FadeUp delayMs={480}>
-          <div className="mt-12 max-w-3xl">
-            <PlaceholderImage
-              aspect="4:3"
-              label="EXERCISE GIF"
-              futureSrc={program.assetSlots.exerciseGif}
-            />
+          <div className="mt-12 max-w-xl">
+            <div className="relative aspect-[3/4] overflow-hidden border border-line bg-white">
+              <Image
+                src={program.assetSlots.exerciseGif}
+                alt={`${program.title} 운동 지도 장면`}
+                fill
+                sizes="(min-width: 768px) 36rem, 100vw"
+                className="object-cover"
+              />
+            </div>
           </div>
         </FadeUp>
       </div>

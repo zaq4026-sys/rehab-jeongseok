@@ -1,6 +1,6 @@
+import Image from "next/image";
 import { CTAButton } from "@/components/common/CTAButton";
 import { FadeUp } from "@/components/common/FadeUp";
-import { PlaceholderImage } from "@/components/common/PlaceholderImage";
 import { NaverBookingLink } from "@/components/ui/NaverBookingLink";
 import type { Program } from "@/content/programs";
 
@@ -53,11 +53,16 @@ export function ProgramHero({ program }: ProgramHeroProps) {
           </div>
 
           <FadeUp delayMs={200}>
-            <PlaceholderImage
-              aspect="16:9"
-              label="PROGRAM HERO IMAGE"
-              futureSrc={program.assetSlots.hero}
-            />
+            <div className="relative mx-auto aspect-[3/4] w-full max-w-[28rem] overflow-hidden border border-line bg-white lg:max-w-none">
+              <Image
+                src={program.assetSlots.hero}
+                alt={`${program.title} 프로그램 평가 장면`}
+                fill
+                priority
+                sizes="(min-width: 1024px) 32vw, 28rem"
+                className="object-cover"
+              />
+            </div>
           </FadeUp>
         </div>
       </div>

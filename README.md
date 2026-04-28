@@ -65,18 +65,25 @@ npm run build
 
 ### 메인 랜딩
 
+- `public/images/center/main-space-1.png`
+  - 메인 HomeHero에서 사용 중입니다.
 - `public/images/director/portrait-primary.jpg`
-  - 메인 HomeHero와 `/about` Hero에서 이미 사용 중입니다.
+  - `/about` Hero와 대표 프로필 영역에서 사용 중입니다.
 
-### About 페이지 Case Story
+### About 페이지
 
-- `public/images/cases/case-shoulder-01.jpg`
+- `public/images/director/assessing.png`
+- `public/images/director/correcting.png`
+- `public/images/director/exercise-leading.png`
+- `public/images/director/consulting.png`
+- Case Story는 현재 이미지 없이 텍스트 섹션으로 운영합니다.
 
 ### 각 프로그램 상세 페이지
 
-- `public/images/programs/{slug}/hero.jpg`
-- `public/images/programs/{slug}/assessment.gif`
-- `public/images/programs/{slug}/exercise-01.gif`
+- `public/images/programs/{slug}/assessment.png`
+- `public/images/programs/{slug}/exercise-01.png`
+
+`assessment.png`는 프로그램 상세 Hero와 첫 평가 섹션에서 함께 사용합니다.
 
 `slug` 값:
 
@@ -91,7 +98,7 @@ npm run build
 
 - 히어로 이미지: `1200×900`, JPEG, `200–400KB`
 - 섹션 내부 사진: `800×600`, JPEG, `100–250KB`
-- 프로그램 GIF: `800×600`, `3–5초`, GIF, `1–2MB` 이하
+- 프로그램 사진: PNG 또는 JPEG, 모바일 로딩을 위해 가능하면 2MB 이하
 
 ### 적용 순서
 

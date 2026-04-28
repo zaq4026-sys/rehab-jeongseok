@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import type { HTMLAttributes, ReactNode } from "react";
 import { FadeUp } from "@/components/common/FadeUp";
-import { PlaceholderImage } from "@/components/common/PlaceholderImage";
 import { LocationCTA } from "@/components/sections/LocationCTA";
 
 export const metadata: Metadata = {
@@ -40,6 +39,25 @@ const workMethods = [
     title: "통증 이후까지 책임집니다",
     description:
       "통증 감소가 끝이 아닙니다. 근력 회복과 일상 복귀, 그리고 재발 방지까지가 하나의 과정입니다.",
+  },
+];
+
+const workPhotos = [
+  {
+    src: "/images/director/assessing.png",
+    alt: "대표가 방문자의 움직임을 평가하는 모습",
+  },
+  {
+    src: "/images/director/correcting.png",
+    alt: "대표가 운동 동작을 수정하는 모습",
+  },
+  {
+    src: "/images/director/exercise-leading.png",
+    alt: "대표가 운동을 지도하는 모습",
+  },
+  {
+    src: "/images/director/consulting.png",
+    alt: "대표가 상담을 진행하는 모습",
   },
 ];
 
@@ -172,11 +190,26 @@ export default function AboutPage() {
             </FadeUp>
           ))}
         </div>
+
+        <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {workPhotos.map((photo, index) => (
+            <FadeUp key={photo.src} delayMs={480 + index * 80}>
+              <div className="relative aspect-[4/5] overflow-hidden border border-line bg-ivory">
+                <Image
+                  src={photo.src}
+                  alt={photo.alt}
+                  fill
+                  sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
+                  className="object-cover object-top"
+                />
+              </div>
+            </FadeUp>
+          ))}
+        </div>
       </PageSection>
 
       <PageSection aria-labelledby="case-story-heading">
-        <div className="grid gap-12 lg:grid-cols-[1.3fr_1fr] lg:gap-16">
-          <div>
+        <div className="max-w-4xl">
             <FadeUp delayMs={0}>
               <Eyebrow>CASE STORY</Eyebrow>
               <h2
@@ -231,16 +264,6 @@ export default function AboutPage() {
                 </div>
               </FadeUp>
             </div>
-          </div>
-
-          <FadeUp delayMs={200}>
-            <PlaceholderImage
-              aspect="3:4"
-              label="CASE STORY IMAGE"
-              futureSrc="/images/cases/case-shoulder-01.jpg"
-              className="mx-auto w-full max-w-[24rem] lg:max-w-none"
-            />
-          </FadeUp>
         </div>
       </PageSection>
 

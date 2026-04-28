@@ -39,9 +39,9 @@ export type Program = {
 
 function createProgramAssetSlots(slug: ProgramSlug) {
   return {
-    hero: `/images/programs/${slug}/hero.jpg`,
-    assessmentGif: `/images/programs/${slug}/assessment.gif`,
-    exerciseGif: `/images/programs/${slug}/exercise-01.gif`,
+    hero: `/images/programs/${slug}/assessment.png`,
+    assessmentGif: `/images/programs/${slug}/assessment.png`,
+    exerciseGif: `/images/programs/${slug}/exercise-01.png`,
   };
 }
 

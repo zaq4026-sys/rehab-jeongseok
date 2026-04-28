@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { FadeUp } from "@/components/common/FadeUp";
 import { LocationCTA } from "@/components/sections/LocationCTA";
@@ -40,19 +41,34 @@ export default function ProgramsPage() {
     <main className="bg-ivory">
       <section className="py-28 md:py-36">
         <div className="mx-auto max-w-6xl px-6">
-          <FadeUp delayMs={0}>
-            <p className="mb-5 font-en text-xs font-semibold uppercase tracking-[0.18em] text-brand">
-              PROGRAMS
-            </p>
-            <h1 className="max-w-4xl break-keep font-serif text-5xl font-semibold leading-[1.08] tracking-[-0.03em] text-charcoal md:text-6xl lg:text-7xl">
-              증상이 아닌 원인을 다룹니다
-            </h1>
-            <p className="mt-8 max-w-3xl break-keep font-serif text-xl leading-9 tracking-[-0.01em] text-charcoal/80 md:text-2xl md:leading-10">
-              재활의정석의 프로그램은 통증 부위가 아니라, 그 부위를 만든
-              움직임의 문제를 찾습니다. 어느 프로그램에 해당하시든 시작은
-              평가입니다.
-            </p>
-          </FadeUp>
+          <div className="grid gap-12 lg:grid-cols-[1.2fr_0.8fr] lg:items-center">
+            <FadeUp delayMs={0}>
+              <p className="mb-5 font-en text-xs font-semibold uppercase tracking-[0.18em] text-brand">
+                PROGRAMS
+              </p>
+              <h1 className="max-w-4xl break-keep font-serif text-5xl font-semibold leading-[1.08] tracking-[-0.03em] text-charcoal md:text-6xl lg:text-7xl">
+                증상이 아닌 원인을 다룹니다
+              </h1>
+              <p className="mt-8 max-w-3xl break-keep font-serif text-xl leading-9 tracking-[-0.01em] text-charcoal/80 md:text-2xl md:leading-10">
+                재활의정석의 프로그램은 통증 부위가 아니라, 그 부위를 만든
+                움직임의 문제를 찾습니다. 어느 프로그램에 해당하시든 시작은
+                평가입니다.
+              </p>
+            </FadeUp>
+
+            <FadeUp delayMs={120}>
+              <div className="relative mx-auto aspect-[3/4] w-full max-w-[24rem] overflow-hidden border border-line bg-white lg:max-w-none">
+                <Image
+                  src="/images/center/main-space-2.png"
+                  alt="재활의정석 전문운동센터 프로그램 공간"
+                  fill
+                  priority
+                  sizes="(min-width: 1024px) 32vw, 24rem"
+                  className="object-cover"
+                />
+              </div>
+            </FadeUp>
+          </div>
         </div>
       </section>
 

@@ -1,5 +1,5 @@
+import Image from "next/image";
 import { FadeUp } from "@/components/common/FadeUp";
-import { PlaceholderImage } from "@/components/common/PlaceholderImage";
 import { NaverBookingLink } from "@/components/ui/NaverBookingLink";
 import { site } from "@/content/site";
 import type { Program } from "@/content/programs";
@@ -33,11 +33,15 @@ export function ProgramFirstEval({ program }: ProgramFirstEvalProps) {
 
             <FadeUp delayMs={120}>
               <div className="mt-10 max-w-xl">
-                <PlaceholderImage
-                  aspect="4:3"
-                  label="ASSESSMENT GIF"
-                  futureSrc={program.assetSlots.assessmentGif}
-                />
+                <div className="relative aspect-[3/4] overflow-hidden border border-line bg-white">
+                  <Image
+                    src={program.assetSlots.assessmentGif}
+                    alt={`${program.title} 첫 평가 장면`}
+                    fill
+                    sizes="(min-width: 1024px) 34vw, 100vw"
+                    className="object-cover"
+                  />
+                </div>
               </div>
             </FadeUp>
           </div>

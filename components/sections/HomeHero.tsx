@@ -60,14 +60,14 @@ export function HomeHero() {
         </div>
 
         <FadeUp delayMs={200}>
-          <div className="relative mx-auto aspect-[3/4] w-full max-w-[28rem] overflow-hidden border border-line bg-white lg:max-w-none">
+          <div className="relative mx-auto aspect-[4/3] w-full max-w-[34rem] overflow-hidden border border-line bg-white lg:max-w-none">
             <Image
-              src="/images/director/portrait-primary.jpg"
-              alt="재활의정석 대표 황제원 물리치료사"
+              src="/images/center/main-space-1.png"
+              alt="재활의정석 전문운동센터 내부 공간"
               fill
               priority
-              sizes="(min-width: 1024px) 40vw, 28rem"
-              className="object-cover object-top"
+              sizes="(min-width: 1024px) 40vw, 34rem"
+              className="object-cover"
             />
           </div>
         </FadeUp>
