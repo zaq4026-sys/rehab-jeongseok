@@ -10,7 +10,7 @@ import { site } from "@/content/site";
 
 /**
  * Sticky site header with desktop navigation and an accessible mobile overlay menu.
- * Uses a crisp symbol plus HTML brand text on the ivory background.
+ * Uses the brand symbol only on the ivory background.
  */
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -79,8 +79,8 @@ export function Header() {
             width={512}
             height={512}
             priority
-            sizes="56px"
-            className="h-10 w-10 sm:h-12 sm:w-12 lg:h-14 lg:w-14"
+            sizes="64px"
+            className="h-12 w-12 sm:h-14 sm:w-14 lg:h-16 lg:w-16"
           />
         </Link>
 

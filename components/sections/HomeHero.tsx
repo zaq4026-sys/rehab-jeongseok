@@ -28,7 +28,7 @@ export function HomeHero() {
             >
               통증이 반복되는 이유를
               <br />
-              다시 봅니다.
+              봅니다.
             </h1>
           </FadeUp>
 

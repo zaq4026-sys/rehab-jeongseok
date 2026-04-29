@@ -5,13 +5,20 @@ import { SectionHeading } from "@/components/common/SectionHeading";
 
 type Credential = {
   keyword: ReactNode;
+  keywordClass?: string;
   label: string;
   description: string;
 };
 
 const credentials: Credential[] = [
   {
-    keyword: "원인 모를 만성통증",
+    keyword: (
+      <>
+        원인 모를
+        <br />
+        만성통증
+      </>
+    ),
     label: "CHRONIC PAIN · UNCLEAR CAUSE",
     description:
       "일반 피트니스나 도수치료가 다루기 어려운 만성통증·파킨슨·수술 후 재활을 정면으로 다룹니다. 회피 없이.",
@@ -19,11 +26,14 @@ const credentials: Credential[] = [
   {
     keyword: (
       <>
-        고려대 석사과정
+        고려대
+        <br />
+        석사과정
         <br />
         물리치료사
       </>
     ),
+    keywordClass: "text-4xl lg:text-5xl",
     label: "KOREA UNIVERSITY · SPORTS MEDICINE",
     description:
       "융합과학대학원 스포츠의학과 석사과정. 근거 기반(EBP) 재활을 연구로 뒷받침합니다.",
@@ -66,7 +76,11 @@ export function CredentialCards() {
                 {item.label}
               </p>
 
-              <h3 className="font-serif text-5xl font-semibold tracking-[-0.025em] text-charcoal lg:text-6xl">
+              <h3
+                className={`break-keep font-serif font-semibold leading-[1.12] tracking-[-0.025em] text-charcoal ${
+                  item.keywordClass ?? "text-5xl lg:text-6xl"
+                }`}
+              >
                 {item.keyword}
               </h3>
 
