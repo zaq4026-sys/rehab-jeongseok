@@ -129,7 +129,7 @@ export default function ApproachPage() {
         <div className="mt-12 grid gap-8 md:grid-cols-3">
           {principles.map((principle, index) => (
             <FadeUp key={principle.id} delayMs={120 + index * 120}>
-              <article
+              <section
                 id={principle.id}
                 className="h-full scroll-mt-28 border border-line bg-ivory p-8 lg:p-10"
               >
@@ -140,7 +140,7 @@ export default function ApproachPage() {
                 <p className="break-keep font-sans text-base leading-8 text-muted">
                   {principle.description}
                 </p>
-              </article>
+              </section>
             </FadeUp>
           ))}
         </div>
