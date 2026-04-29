@@ -32,7 +32,7 @@ export function Footer() {
             </h2>
           </div>
 
-          <p className="max-w-2xl font-serif text-2xl leading-relaxed tracking-[-0.02em] text-charcoal sm:text-3xl">
+          <p className="max-w-2xl break-keep font-serif text-2xl leading-relaxed tracking-[-0.02em] text-charcoal sm:text-3xl">
             아프지 않은 내일을 돌려드리는 게 저희의 일입니다.
           </p>
         </div>

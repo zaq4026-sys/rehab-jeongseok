@@ -10,7 +10,7 @@ import { site } from "@/content/site";
 
 /**
  * Sticky site header with desktop navigation and an accessible mobile overlay menu.
- * Uses the brand symbol only on the ivory background.
+ * Uses a pure brand symbol plus crisp HTML brand text on the ivory background.
  */
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -70,18 +70,26 @@ export function Header() {
         <Link
           href="/"
           aria-label={`${site.name} 홈`}
-          className="inline-flex items-center focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand"
+          className="inline-flex items-center gap-2 sm:gap-3 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand"
           onClick={closeMenu}
         >
           <Image
-            src="/images/brand/logo-symbol-only.png"
+            src="/images/brand/logo-symbol-pure.png"
             alt="재활의정석 전문운동센터"
             width={512}
             height={512}
             priority
-            sizes="64px"
-            className="h-12 w-12 sm:h-14 sm:w-14 lg:h-16 lg:w-16"
+            sizes="56px"
+            className="h-10 w-10 sm:h-12 sm:w-12 lg:h-14 lg:w-14"
           />
+          <span className="flex flex-col leading-tight">
+            <span className="font-sans text-base font-semibold tracking-[-0.02em] text-charcoal lg:text-lg">
+              재활의정석
+            </span>
+            <span className="font-sans text-xs font-medium tracking-[0.04em] text-muted lg:text-sm">
+              전문운동센터
+            </span>
+          </span>
         </Link>
 
         <nav aria-label="주요 메뉴" className="hidden items-center gap-8 lg:flex">
