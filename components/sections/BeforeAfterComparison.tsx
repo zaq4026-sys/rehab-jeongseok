@@ -30,7 +30,7 @@ export function BeforeAfterComparison() {
         <SectionHeading
           id="comparison-heading"
           kicker="METHODOLOGY"
-          title="평가가 먼저인 이유"
+          title="독보적인 전문성"
           description={
             <>
               많은 재활센터가 평가 없이 운동부터 시작합니다.

@@ -24,11 +24,11 @@ export function HomeHero() {
           <FadeUp delayMs={120}>
             <h1
               id="hero-heading"
-              className="font-serif text-5xl font-semibold leading-[1.1] tracking-[-0.025em] text-charcoal sm:text-6xl lg:text-7xl xl:text-[5.5rem]"
+              className="font-serif text-[2.75rem] font-semibold leading-[1.1] tracking-[-0.025em] text-charcoal sm:text-6xl lg:text-7xl xl:text-[5.5rem]"
             >
-              통증이 반복되는 이유를
+              통증이 반복되는
               <br />
-              봅니다.
+              <span className="whitespace-nowrap">이유를 봅니다.</span>
             </h1>
           </FadeUp>
 
