@@ -31,6 +31,13 @@ type ContactCard = {
   ariaLabel: string;
 };
 
+type PricingPlan = {
+  sessions: string;
+  price: string;
+  perSession: string;
+  popular?: boolean;
+};
+
 const contactCards: ContactCard[] = [
   {
     kicker: "NAVER BOOKING",
@@ -72,6 +79,36 @@ const contactCards: ContactCard[] = [
     ariaLabel: "네이버 플레이스 후기 보기 (새 창)",
   },
 ];
+
+const pricingPlans: PricingPlan[] = [
+  {
+    sessions: "10회",
+    price: "80만원",
+    perSession: "회당 8만원",
+  },
+  {
+    sessions: "20회",
+    price: "150만원",
+    perSession: "회당 7만 5천원",
+    popular: true,
+  },
+  {
+    sessions: "30회",
+    price: "220만원",
+    perSession: "회당 7만 3천원",
+  },
+  {
+    sessions: "50회",
+    price: "350만원",
+    perSession: "회당 7만원",
+  },
+];
+
+const pricingNotes = [
+  "모든 회원의 시작은 평가입니다",
+  "회원권 종류는 1:1 상담 후 함께 결정됩니다",
+  "첫 상담은 무료입니다 (전화 또는 방문)",
+] as const;
 
 function ContactCardLink({ card }: { card: ContactCard }) {
   const articleClass = card.primary
@@ -126,6 +163,32 @@ function ContactCardLink({ card }: { card: ContactCard }) {
   );
 }
 
+function PricingCard({ plan }: { plan: PricingPlan }) {
+  const cardClass = plan.popular
+    ? "relative h-full border-2 border-brand bg-white p-8 shadow-soft transition-all duration-500 ease-calm hover:bg-brand-light lg:-translate-y-1"
+    : "h-full border border-line bg-white p-8 transition-all duration-500 ease-calm hover:border-brand hover:bg-ivory";
+
+  return (
+    <article className={cardClass}>
+      {plan.popular ? (
+        <span className="absolute right-4 top-4 bg-brand px-3 py-1 font-en text-[10px] font-semibold uppercase tracking-[0.18em] text-white">
+          POPULAR
+        </span>
+      ) : null}
+
+      <h3 className="font-serif text-2xl font-semibold tracking-[-0.02em] text-charcoal">
+        {plan.sessions}
+      </h3>
+      <p className="mt-8 font-serif text-4xl font-semibold tracking-[-0.025em] text-charcoal">
+        {plan.price}
+      </p>
+      <p className="mt-4 font-sans text-sm leading-7 text-muted">
+        {plan.perSession}
+      </p>
+    </article>
+  );
+}
+
 export default function ContactPage() {
   return (
     <main>
@@ -149,6 +212,50 @@ export default function ContactPage() {
           </div>
 
           <FadeUp delayMs={480}>
+            <section
+              aria-labelledby="contact-pricing-heading"
+              className="mt-24 lg:mt-32"
+            >
+              <SectionHeading
+                id="contact-pricing-heading"
+                kicker="PRICING"
+                title="가격 안내"
+                description="회복은 한 번에 끝나지 않습니다. 회복 단계와 일정에 맞춘 회원권을 운영합니다."
+              />
+
+              <div className="mt-10 grid grid-cols-1 gap-4 md:grid-cols-2 lg:mt-12 lg:grid-cols-4 lg:gap-6">
+                {pricingPlans.map((plan) => (
+                  <PricingCard key={plan.sessions} plan={plan} />
+                ))}
+              </div>
+
+              <div className="mt-8 grid gap-2 font-sans text-sm leading-7 text-muted">
+                {pricingNotes.map((note) => (
+                  <p key={note} className="break-keep">
+                    * {note}
+                  </p>
+                ))}
+              </div>
+
+              <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:gap-5">
+                <NaverBookingLink
+                  ariaLabel="네이버 예약 페이지에서 1:1 상담 예약하기"
+                  className="inline-flex min-h-12 items-center justify-center bg-brand px-6 text-sm font-semibold text-white transition-colors duration-300 ease-calm hover:bg-brand-dark active:bg-brand-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand"
+                >
+                  1:1 상담 예약
+                </NaverBookingLink>
+                <a
+                  href={`tel:${site.phone.replaceAll("-", "")}`}
+                  aria-label={`전화로 상담 문의: ${site.phoneDisplay}`}
+                  className="inline-flex min-h-12 items-center justify-center border border-line bg-transparent px-6 text-sm font-semibold text-charcoal transition-colors duration-300 ease-calm hover:border-brand hover:text-brand focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand"
+                >
+                  {site.phoneDisplay}
+                </a>
+              </div>
+            </section>
+          </FadeUp>
+
+          <FadeUp delayMs={640}>
             <section
               aria-labelledby="contact-hours-heading"
               className="mt-24 lg:mt-32"
