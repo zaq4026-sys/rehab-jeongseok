@@ -44,7 +44,7 @@ npm run build
 ## TODO
 
 - `public/images/brand/` 새 고화질 로고 시스템 적용
-  - Header: `logo-symbol-header.png` + HTML 텍스트
+  - Header: `logo-symbol-only.png` 심볼 단독
   - Footer: `logo-horizontal-dark-card.png`
   - Favicon: `favicon.ico`, `icon.png`, `apple-icon.png`
   - OG: `logo-vertical-dark-card.png`

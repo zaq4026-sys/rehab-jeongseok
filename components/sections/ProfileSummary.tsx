@@ -62,9 +62,7 @@ export function ProfileSummary() {
             <p className="break-keep font-serif text-2xl font-semibold leading-[1.35] tracking-[-0.02em] text-charcoal lg:text-3xl xl:text-4xl">
               재활센터는 많습니다.
               <br />
-              하지만 직접 평가하고
-              <br />
-              직접 설계하는 곳은 드뭅니다.
+              하지만 재활의정석은 단 하나입니다.
             </p>
           </FadeUp>
 

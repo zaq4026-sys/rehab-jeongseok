@@ -1,6 +1,6 @@
 import type { HTMLAttributes, ReactNode } from "react";
 
-type SectionHeadingProps = HTMLAttributes<HTMLDivElement> & {
+type SectionHeadingProps = Omit<HTMLAttributes<HTMLDivElement>, "title"> & {
   kicker?: string;
   title: ReactNode;
   description?: ReactNode;

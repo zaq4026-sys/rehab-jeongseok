@@ -70,26 +70,18 @@ export function Header() {
         <Link
           href="/"
           aria-label={`${site.name} 홈`}
-          className="inline-flex items-center gap-2.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand"
+          className="inline-flex items-center focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand"
           onClick={closeMenu}
         >
           <Image
-            src="/images/brand/logo-symbol-header.png"
-            alt=""
+            src="/images/brand/logo-symbol-only.png"
+            alt="재활의정석 전문운동센터"
             width={512}
             height={512}
             priority
-            sizes="40px"
-            className="h-9 w-9 sm:h-10 sm:w-10"
+            sizes="56px"
+            className="h-10 w-10 sm:h-12 sm:w-12 lg:h-14 lg:w-14"
           />
-          <span className="flex flex-col leading-none">
-            <span className="font-sans text-base font-extrabold tracking-[-0.02em] text-charcoal lg:text-lg">
-              재활의정석
-            </span>
-            <span className="mt-1 font-sans text-[11px] font-semibold tracking-[0.12em] text-muted lg:text-xs">
-              전문운동센터
-            </span>
-          </span>
         </Link>
 
         <nav aria-label="주요 메뉴" className="hidden items-center gap-8 lg:flex">

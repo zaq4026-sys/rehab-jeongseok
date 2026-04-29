@@ -57,7 +57,7 @@ export function ProgramAreas() {
         <SectionHeading
           id="programs-heading"
           kicker="FOCUS AREAS"
-          title="대표가 직접 평가하고 관리하는 분야입니다."
+          title="대표가 직접 평가하고 관리합니다"
           description={
             <>
               통증 부위가 아니라, 그 부위를 만든 움직임의 문제를 찾습니다.

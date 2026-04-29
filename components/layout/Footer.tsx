@@ -39,14 +39,14 @@ export function Footer() {
 
         <div className="grid gap-12 border-b border-line py-14 md:grid-cols-2 lg:grid-cols-3">
           <section aria-labelledby="footer-center-info">
-            <div className="mb-8 flex aspect-[16/9] w-full max-w-[16rem] items-center justify-center overflow-hidden bg-brand">
+            <div className="mb-8 flex aspect-[16/9] w-full max-w-[16rem] items-center justify-center overflow-hidden bg-brand p-5">
               <Image
                 src="/images/brand/logo-horizontal-dark-card.png"
                 alt="재활의정석 전문운동센터"
                 width={1565}
                 height={716}
                 sizes="256px"
-                className="h-full w-full object-cover"
+                className="h-full w-full object-contain"
               />
             </div>
 

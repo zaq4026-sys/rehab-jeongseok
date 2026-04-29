@@ -12,11 +12,11 @@ const genericApproach = [
 ] as const;
 
 const jeongseokApproach = [
-  "움직임·통증·자세 평가 후 설계",
-  "회복 단계별 강도 조정",
-  "덜어내고 정렬부터, 그다음 강화",
-  "근거 기반(EBP) · 석사과정 연구",
-  "평가 → 회복 → 복귀 3단계 관리",
+  "움직임·통증·자세 정밀 평가 후 설계",
+  "회복 단계에 맞춘 개별 강도 조절",
+  "정렬 → 안정화 → 강화 단계 접근",
+  "근거 기반 운동(EBP) · 석사과정 연구",
+  "평가 → 회복 → 복귀 체계적 관리",
 ] as const;
 
 /**
@@ -30,8 +30,16 @@ export function BeforeAfterComparison() {
         <SectionHeading
           id="comparison-heading"
           kicker="METHODOLOGY"
-          title="순서가 달랐기 때문에 결과가 달랐습니다."
-          description="많은 재활센터가 평가 없이 운동부터 시작합니다. 재활의정석은 평가를 가장 먼저 놓습니다. 이 순서가 회복의 속도와 재발 여부를 결정합니다."
+          title="평가가 먼저인 이유"
+          description={
+            <>
+              많은 재활센터가 평가 없이 운동부터 시작합니다.
+              <br />
+              <br />
+              재활의정석은 평가를 먼저 놓습니다. 이 순서가 회복 속도와
+              재발 여부를 바꿉니다.
+            </>
+          }
           align="left"
         />
       </FadeUp>

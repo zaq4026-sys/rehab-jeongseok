@@ -26,7 +26,7 @@ export function HomeHero() {
               id="hero-heading"
               className="font-serif text-5xl font-semibold leading-[1.1] tracking-[-0.025em] text-charcoal sm:text-6xl lg:text-7xl xl:text-[5.5rem]"
             >
-              통증이 반복되는 이유부터
+              통증이 반복되는 이유를
               <br />
               다시 봅니다.
             </h1>
