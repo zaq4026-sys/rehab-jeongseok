@@ -213,6 +213,7 @@ export default function ContactPage() {
 
           <FadeUp delayMs={480}>
             <section
+              id="pricing"
               aria-labelledby="contact-pricing-heading"
               className="mt-24 lg:mt-32"
             >

@@ -4,10 +4,10 @@ export type NavigationItem = {
 };
 
 export const mainNavigation: NavigationItem[] = [
-  { label: "Home", href: "/" },
-  { label: "About", href: "/about" },
-  { label: "Approach", href: "/approach" },
-  { label: "Programs", href: "/programs" },
-  { label: "Location", href: "/#location" },
-  { label: "Contact", href: "/contact" },
+  { label: "홈", href: "/" },
+  { label: "소개", href: "/about" },
+  { label: "진행 방식", href: "/approach" },
+  { label: "프로그램", href: "/programs" },
+  { label: "위치", href: "/#location" },
+  { label: "가격·문의", href: "/contact#pricing" },
 ];
