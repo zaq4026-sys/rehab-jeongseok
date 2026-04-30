@@ -13,19 +13,19 @@ const approachMenuItems = [
     eyebrow: "01 ASSESSMENT",
     label: "평가",
     description: "움직임·통증·자세 정밀 평가",
-    href: "/approach#assessment",
+    href: "/approach/assessment",
   },
   {
     eyebrow: "02 RECOVERY",
     label: "회복",
     description: "조직·정렬·움직임 단계적 회복",
-    href: "/approach#recovery",
+    href: "/approach/recovery",
   },
   {
     eyebrow: "03 PERFORMANCE",
     label: "복귀",
     description: "일상·업무·스포츠 동작 재구축",
-    href: "/approach#performance",
+    href: "/approach/performance",
   },
 ] as const;
 

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { Fragment, type ReactNode } from "react";
 import { FadeUp } from "@/components/common/FadeUp";
 import { LocationCTA } from "@/components/sections/LocationCTA";
@@ -21,18 +22,21 @@ const principles = [
   {
     id: "assessment",
     title: "Evaluation — 평가",
+    href: "/approach/assessment",
     description:
       "통증의 원인, 움직임의 제한, 근력의 불균형을 먼저 파악합니다. 평가 없는 운동은 추측일 뿐입니다.",
   },
   {
     id: "recovery",
     title: "Recovery — 회복",
+    href: "/approach/recovery",
     description:
       "파악된 문제를 해결하는 단계입니다. 통증과 기능 제한을 우선 제거하고, 안전한 움직임을 다시 학습합니다.",
   },
   {
     id: "performance",
     title: "Performance — 수행력",
+    href: "/approach/performance",
     description:
       "일상·운동·스포츠에서 실제로 쓸 수 있는 몸으로 만듭니다. 재발하지 않는 근력과 움직임 패턴을 갖춥니다.",
   },
@@ -140,6 +144,13 @@ export default function ApproachPage() {
                 <p className="break-keep font-sans text-base leading-8 text-muted">
                   {principle.description}
                 </p>
+                <Link
+                  href={principle.href}
+                  className="mt-8 inline-flex items-center gap-2 font-en text-[11px] font-semibold uppercase tracking-[0.18em] text-brand underline-offset-[0.18em] transition-colors duration-300 ease-calm hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand"
+                >
+                  자세히 보기
+                  <span aria-hidden="true">→</span>
+                </Link>
               </section>
             </FadeUp>
           ))}
