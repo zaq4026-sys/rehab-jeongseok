@@ -1,8 +1,17 @@
 import Link from "next/link";
+import Image from "next/image";
 import { FadeUp } from "@/components/common/FadeUp";
 import { Section } from "@/components/common/Section";
 import { NaverBookingLink } from "@/components/ui/NaverBookingLink";
 import { site } from "@/content/site";
+
+type ApproachImage = {
+  src: string;
+  alt: string;
+  aspect?: "3:4" | "4:3" | "16:9";
+  side?: "left" | "right";
+  priority?: boolean;
+};
 
 type TextSection = {
   eyebrow: string;
@@ -41,10 +50,10 @@ type NextStepSection = {
 };
 
 type ApproachContentSection =
-  | { type: "text"; data: TextSection }
-  | { type: "items"; data: ItemSection }
-  | { type: "checklist"; data: ChecklistSection }
-  | { type: "next"; data: NextStepSection };
+  | { type: "text"; data: TextSection; image?: ApproachImage }
+  | { type: "items"; data: ItemSection; image?: ApproachImage }
+  | { type: "checklist"; data: ChecklistSection; image?: ApproachImage }
+  | { type: "next"; data: NextStepSection; image?: ApproachImage };
 
 export type ApproachDetailPageData = {
   hero: {
@@ -52,6 +61,7 @@ export type ApproachDetailPageData = {
     title: string;
     subtitle: string;
     description: string;
+    image: ApproachImage;
   };
   sections: ApproachContentSection[];
   ctaTitle: string;
@@ -84,6 +94,35 @@ function Paragraphs({ paragraphs }: { paragraphs: string[] }) {
           {paragraph}
         </p>
       ))}
+    </div>
+  );
+}
+
+function ApproachImageFrame({
+  image,
+  className = "",
+}: {
+  image: ApproachImage;
+  className?: string;
+}) {
+  const aspectClass = {
+    "3:4": "aspect-[3/4]",
+    "4:3": "aspect-[4/3]",
+    "16:9": "aspect-[16/9]",
+  }[image.aspect ?? "4:3"];
+
+  return (
+    <div
+      className={`relative overflow-hidden border border-line bg-white ${aspectClass} ${className}`}
+    >
+      <Image
+        src={image.src}
+        alt={image.alt}
+        fill
+        priority={image.priority}
+        sizes="(min-width: 1024px) 34vw, 100vw"
+        className="object-cover"
+      />
     </div>
   );
 }
@@ -215,7 +254,7 @@ function NextStepBlock({ section }: { section: NextStepSection }) {
   );
 }
 
-function renderSection(section: ApproachContentSection) {
+function renderSectionBody(section: ApproachContentSection) {
   if (section.type === "text") {
     return <TextBlock section={section.data} />;
   }
@@ -231,6 +270,33 @@ function renderSection(section: ApproachContentSection) {
   return <NextStepBlock section={section.data} />;
 }
 
+function renderSection(section: ApproachContentSection) {
+  if (!section.image || section.type === "next") {
+    return renderSectionBody(section);
+  }
+
+  const imageSide = section.image.side ?? "right";
+  const content = (
+    <div className={imageSide === "left" ? "lg:order-2" : "lg:order-1"}>
+      {renderSectionBody(section)}
+    </div>
+  );
+  const image = (
+    <FadeUp delayMs={180}>
+      <ApproachImageFrame image={section.image} />
+    </FadeUp>
+  );
+
+  return (
+    <div className="grid gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
+      <div className={imageSide === "left" ? "lg:order-1" : "lg:order-2"}>
+        {image}
+      </div>
+      {content}
+    </div>
+  );
+}
+
 /**
  * Shared template for the three approach detail pages.
  * Keeps the SEO landing pages visually consistent while preserving page-specific copy.
@@ -239,20 +305,29 @@ export function ApproachDetailPage({ data }: { data: ApproachDetailPageData }) {
   return (
     <main className="bg-ivory">
       <Section tone="ivory" innerClassName="max-w-6xl">
-        <FadeUp delayMs={0}>
-          <div className="max-w-4xl">
-            <Eyebrow>{data.hero.eyebrow}</Eyebrow>
-            <h1 className="break-keep font-serif text-6xl font-semibold leading-[1.05] tracking-[-0.03em] text-charcoal md:text-7xl lg:text-8xl">
-              {data.hero.title}
-            </h1>
-            <p className="mt-8 break-keep font-serif text-2xl font-semibold leading-tight tracking-[-0.02em] text-charcoal md:text-3xl lg:text-4xl">
-              {data.hero.subtitle}
-            </p>
-            <p className="mt-6 max-w-3xl break-keep font-sans text-base leading-8 text-muted md:text-lg md:leading-9">
-              {data.hero.description}
-            </p>
-          </div>
-        </FadeUp>
+        <div className="grid gap-12 lg:grid-cols-[1.08fr_0.92fr] lg:items-center">
+          <FadeUp delayMs={0}>
+            <div className="max-w-4xl">
+              <Eyebrow>{data.hero.eyebrow}</Eyebrow>
+              <h1 className="break-keep font-serif text-6xl font-semibold leading-[1.05] tracking-[-0.03em] text-charcoal md:text-7xl lg:text-8xl">
+                {data.hero.title}
+              </h1>
+              <p className="mt-8 break-keep font-serif text-2xl font-semibold leading-tight tracking-[-0.02em] text-charcoal md:text-3xl lg:text-4xl">
+                {data.hero.subtitle}
+              </p>
+              <p className="mt-6 max-w-3xl break-keep font-sans text-base leading-8 text-muted md:text-lg md:leading-9">
+                {data.hero.description}
+              </p>
+            </div>
+          </FadeUp>
+
+          <FadeUp delayMs={160}>
+            <ApproachImageFrame
+              image={{ ...data.hero.image, priority: true }}
+              className="mx-auto w-full max-w-[34rem] lg:max-w-none"
+            />
+          </FadeUp>
+        </div>
       </Section>
 
       {data.sections.map((section, index) => (

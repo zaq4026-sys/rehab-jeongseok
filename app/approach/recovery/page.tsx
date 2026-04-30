@@ -23,6 +23,11 @@ const recoveryPageData: ApproachDetailPageData = {
     title: "회복",
     subtitle: "덜어내고 정렬부터, 그 다음 강화",
     description: "운동의 강도가 아니라, 운동의 순서가 회복을 만듭니다.",
+    image: {
+      src: "/images/director/correcting.png",
+      alt: "재활의정석 대표 황제원이 회원의 자세를 교정하는 모습",
+      aspect: "4:3",
+    },
   },
   sections: [
     {
@@ -68,6 +73,12 @@ const recoveryPageData: ApproachDetailPageData = {
           },
         ],
       },
+      image: {
+        src: "/images/director/exercise-leading.png",
+        alt: "재활 운동을 단계적으로 지도하는 모습",
+        aspect: "4:3",
+        side: "left",
+      },
     },
     {
       type: "text",
@@ -79,6 +90,12 @@ const recoveryPageData: ApproachDetailPageData = {
           "매 회차마다 그날의 상태를 다시 평가합니다. 계획표대로가 아니라, 그날의 몸에 맞춰 진행합니다.",
           "이게 운동 재활과 일반 PT의 가장 큰 차이입니다.",
         ],
+      },
+      image: {
+        src: "/images/programs/lower-back/exercise-01.png",
+        alt: "회원의 컨디션에 맞춘 단계별 재활 운동",
+        aspect: "4:3",
+        side: "right",
       },
     },
     {

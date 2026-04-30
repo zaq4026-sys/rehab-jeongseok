@@ -24,6 +24,11 @@ const assessmentPageData: ApproachDetailPageData = {
     subtitle: "통증이 아닌 움직임을 봅니다",
     description:
       "평가 없이 시작되는 운동은, 같은 통증을 더 강하게 만듭니다.",
+    image: {
+      src: "/images/director/assessing.png",
+      alt: "재활의정석 대표 황제원이 회원의 움직임을 평가하는 모습",
+      aspect: "4:3",
+    },
   },
   sections: [
     {
@@ -77,6 +82,12 @@ const assessmentPageData: ApproachDetailPageData = {
           },
         ],
       },
+      image: {
+        src: "/images/director/correcting.png",
+        alt: "평가 진행 모습",
+        aspect: "4:3",
+        side: "left",
+      },
     },
     {
       type: "checklist",
@@ -93,6 +104,12 @@ const assessmentPageData: ApproachDetailPageData = {
         ],
         outro:
           "이 설계서는 회복 전 과정의 지도가 됩니다. 회차마다 진행 상황을 이 위에 갱신합니다.",
+      },
+      image: {
+        src: "/images/director/consulting.png",
+        alt: "재활의정석 대표가 회원과 회복 설계서를 함께 작성하는 모습",
+        aspect: "4:3",
+        side: "right",
       },
     },
     {

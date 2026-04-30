@@ -24,6 +24,11 @@ const performancePageData: ApproachDetailPageData = {
     subtitle: "안 아프다가 아닌, 다시 잘 움직입니다",
     description:
       "통증이 사라진 게 끝이 아닙니다. 일상·업무·운동이 통증 없이 돌아가는 것이 끝입니다.",
+    image: {
+      src: "/images/programs/athlete/exercise-01.png",
+      alt: "스포츠 동작 복귀를 위한 운동 재활",
+      aspect: "4:3",
+    },
   },
   sections: [
     {
@@ -72,6 +77,12 @@ const performancePageData: ApproachDetailPageData = {
           },
         ],
       },
+      image: {
+        src: "/images/director/exercise-leading.png",
+        alt: "일상 · 업무 · 스포츠 복귀를 위한 단계별 운동 지도",
+        aspect: "4:3",
+        side: "left",
+      },
     },
     {
       type: "checklist",
@@ -90,6 +101,12 @@ const performancePageData: ApproachDetailPageData = {
         ],
         outro:
           "회복은 한 번으로 끝나지 않습니다. 계속 움직이는 한, 관리도 계속됩니다.",
+      },
+      image: {
+        src: "/images/center/consultation-room.png",
+        alt: "재활의정석 전문운동센터 상담 공간",
+        aspect: "4:3",
+        side: "right",
       },
     },
     {
